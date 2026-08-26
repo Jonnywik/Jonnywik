@@ -6,9 +6,11 @@ from PIL import Image, ImageDraw, ImageFilter
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "assets"
+INK = (8, 14, 20)
+GRID = (32, 48, 58)
 TEAL = (45, 212, 191)
-ORANGE = (251, 146, 60)
-VIOLET = (167, 139, 250)
+MINT = (169, 249, 236)
+AMBER = (251, 188, 93)
 WHITE = (220, 248, 243)
 
 
@@ -43,52 +45,53 @@ def chained_cubics(segments, vertical_offset: float = 0):
     return points
 
 
-def original_routes(t: float):
+def signal_transit_routes(t: float):
+    """Return three quietly drifting transit routes that converge on the signal cluster."""
     route_segments = [
         [
-            ((-20, 355), (101, 241), (188, 445), (328, 321)),
-            ((328, 321), (468, 197), (497, 190), (627, 283)),
-            ((627, 283), (757, 376), (838, 322), (957, 194)),
-            ((957, 194), (1076, 66), (1148, 126), (1220, 29)),
+            ((-40, 373), (105, 260), (237, 444), (410, 316)),
+            ((410, 316), (542, 205), (612, 232), (735, 263)),
+            ((735, 263), (862, 294), (933, 166), (1037, 131)),
+            ((1037, 131), (1110, 112), (1160, 71), (1235, 49)),
         ],
         [
-            ((-40, 397), (82, 271), (213, 473), (355, 349)),
-            ((355, 349), (497, 225), (520, 202), (644, 282)),
-            ((644, 282), (768, 362), (873, 303), (990, 177)),
-            ((990, 177), (1107, 51), (1177, 110), (1245, 25)),
+            ((-40, 414), (126, 309), (250, 462), (432, 343)),
+            ((432, 343), (572, 252), (647, 297), (765, 284)),
+            ((765, 284), (891, 272), (951, 189), (1056, 145)),
+            ((1056, 145), (1123, 118), (1184, 89), (1238, 63)),
         ],
         [
-            ((-40, 314), (88, 214), (168, 405), (300, 286)),
-            ((300, 286), (432, 167), (480, 154), (612, 249)),
-            ((612, 249), (744, 344), (827, 296), (953, 173)),
-            ((953, 173), (1079, 50), (1154, 112), (1230, 24)),
-        ],
-        [
-            ((-40, 269), (86, 173), (199, 361), (323, 240)),
-            ((323, 240), (447, 119), (500, 113), (625, 210)),
-            ((625, 210), (750, 307), (842, 258), (963, 142)),
-            ((963, 142), (1084, 26), (1153, 90), (1232, 14)),
+            ((-40, 322), (115, 230), (242, 390), (392, 286)),
+            ((392, 286), (523, 190), (614, 191), (726, 233)),
+            ((726, 233), (840, 274), (929, 201), (1018, 114)),
+            ((1018, 114), (1094, 58), (1154, 69), (1230, 22)),
         ],
     ]
     paths = []
     for index, segments in enumerate(route_segments):
-        drift = sin(t * 0.8 + index * 0.72) * (3.4 + index * 0.6)
+        drift = sin(t * 0.78 + index * 0.82) * (2.1 + index * 0.55)
         paths.append(chained_cubics(segments, drift))
-    accent = chained_cubics(
-        [
-            ((508, 446), (606, 357), (639, 321), (708, 302)),
-            ((708, 302), (777, 283), (800, 187), (880, 156)),
-            ((880, 156), (960, 125), (1020, 170), (1089, 72)),
-        ],
-        sin(t * 0.78 + 1.1) * 3.5,
-    )
-    return paths, accent
+    return paths
 
 
-def draw_dashed_route(draw: ImageDraw.ImageDraw, points, color, shift: int, opacity: int, width: int = 2):
-    for index in range(0, len(points) - 4, 5):
-        if ((index // 5 + shift) % 7) in (0, 1, 2):
-            draw.line(points[index:index + 5], fill=(*color, opacity), width=width, joint="curve")
+def point_on_route(points, progress: float):
+    location = max(0, min(len(points) - 1, int(progress % 1 * (len(points) - 1))))
+    return points[location]
+
+
+def draw_packet(canvas: Image.Image, points, progress: float, color=TEAL, size: int = 3):
+    """Draw one directional signal packet with a short fading wake."""
+    wake = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
+    wake_draw = ImageDraw.Draw(wake)
+    for offset in range(7, -1, -1):
+        x, y = point_on_route(points, progress - offset * 0.018)
+        radius = max(1, size - offset // 3)
+        alpha = 24 + (7 - offset) * 25
+        wake_draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=(*color, alpha))
+    canvas.alpha_composite(wake.filter(ImageFilter.GaussianBlur(3)))
+    crisp = ImageDraw.Draw(canvas, "RGBA")
+    x, y = point_on_route(points, progress)
+    crisp.ellipse((x - size, y - size, x + size, y + size), fill=(*color, 245), outline=(*WHITE, 205), width=1)
 
 
 def glow(canvas: Image.Image, x: int, y: int, color, radius: int):
@@ -101,68 +104,88 @@ def glow(canvas: Image.Image, x: int, y: int, color, radius: int):
 
 
 def draw_grid(draw: ImageDraw.ImageDraw, width: int, height: int):
-    for x in range(0, width + 1, 46):
-        draw.line((x, 0, x, height), fill=(28, 42, 52, 105), width=1)
-    for y in range(0, height + 1, 46):
-        draw.line((0, y, width, y), fill=(28, 42, 52, 105), width=1)
+    for x in range(0, width + 1, 60):
+        draw.line((x, 0, x, height), fill=(*GRID, 54), width=1)
+    for y in range(0, height + 1, 60):
+        draw.line((0, y, width, y), fill=(*GRID, 54), width=1)
 
 
 def hero_frame(frame: int, width: int = 1200, height: int = 420) -> Image.Image:
-    t = frame / 24 * pi * 2
-    image = Image.new("RGBA", (width, height), (9, 13, 18, 255))
+    t = frame / 32 * pi * 2
+    image = Image.new("RGBA", (width, height), (*INK, 255))
     glow_layer = Image.new("RGBA", (width, height), (0, 0, 0, 0))
     glow_draw = ImageDraw.Draw(glow_layer)
-    glow_draw.ellipse((365, 140, 920, 520), fill=(*TEAL, 28))
-    image.alpha_composite(glow_layer.filter(ImageFilter.GaussianBlur(95)))
+    glow_draw.ellipse((340, 152, 913, 510), fill=(*TEAL, 22))
+    glow_draw.ellipse((754, 45, 1165, 274), fill=(*TEAL, 10))
+    image.alpha_composite(glow_layer.filter(ImageFilter.GaussianBlur(104)))
     draw = ImageDraw.Draw(image, "RGBA")
     draw_grid(draw, width, height)
-    draw.rectangle((1, 1, width - 2, height - 2), outline=(196, 221, 226, 34), width=1)
+    draw.rectangle((1, 1, width - 2, height - 2), outline=(*WHITE, 25), width=1)
 
-    routes, accent = original_routes(t)
-    for line_index, points in enumerate(routes):
-        draw_dashed_route(draw, points, TEAL, int(frame * 0.9 + line_index * 2), 106 + line_index * 20, 1)
-    draw_dashed_route(draw, accent, TEAL, int(frame * 1.3), 166, 2)
+    scan_x = 518 + sin(t * 0.68) * 174
+    scan_layer = Image.new("RGBA", image.size, (0, 0, 0, 0))
+    scan_draw = ImageDraw.Draw(scan_layer)
+    scan_draw.rectangle((scan_x - 22, 56, scan_x + 22, height - 42), fill=(*TEAL, 8))
+    image.alpha_composite(scan_layer.filter(ImageFilter.GaussianBlur(22)))
+
+    routes = signal_transit_routes(t)
+    for route_index, points in enumerate(routes):
+        opacity = 72 + route_index * 18
+        draw.line(points, fill=(*TEAL, opacity), width=1, joint="curve")
+    draw.line(routes[0], fill=(*MINT, 112), width=2, joint="curve")
+
+    for route, progress, size in [
+        (routes[0], frame / 32 * 0.55 + 0.05, 3),
+        (routes[0], frame / 32 * 0.38 + 0.60, 2),
+        (routes[1], frame / 32 * 0.48 + 0.22, 3),
+        (routes[2], frame / 32 * 0.43 + 0.46, 2),
+    ]:
+        draw_packet(image, route, progress, TEAL, size)
 
     for x, y, color, radius, phase in [
-        (723, 296, TEAL, 11, 0),
-        (943, 150, ORANGE, 10, 0.7),
-        (1070, 82, VIOLET, 9, 1.4),
+        (735, 261, TEAL, 10, 0.0),
+        (1039, 132, AMBER, 8, 0.7),
+        (1106, 97, MINT, 7, 1.3),
     ]:
-        drift = sin(t * 0.8 + phase) * 3
-        glow(image, x, int(y + drift), color, radius + int((sin(t * 1.25 + phase) + 1) * 1.5))
+        drift = sin(t * 0.76 + phase) * 2
+        pulse = int((sin(t * 1.15 + phase) + 1) * 1.4)
+        glow(image, x, int(y + drift), color, radius + pulse)
 
-    particle_draw = ImageDraw.Draw(image, "RGBA")
-    for particle_index in range(15):
-        route = routes[particle_index % len(routes)]
-        location = int((particle_index * 37 + frame * (2 + particle_index % 3)) % (len(route) - 1))
-        x, y = route[location]
-        rise = sin(t * 1.45 + particle_index) * 3
-        color = TEAL if particle_index % 6 else ORANGE if particle_index % 7 else VIOLET
-        radius = 1 if particle_index % 3 else 2
-        particle_draw.ellipse((x - radius, y + rise - radius, x + radius, y + rise + radius), fill=(*color, 185))
+    marker_draw = ImageDraw.Draw(image, "RGBA")
+    for x, y, alpha in [(1000, 88, 128), (1080, 67, 86), (1144, 55, 70)]:
+        marker_draw.ellipse((x - 1, y - 1, x + 1, y + 1), fill=(*MINT, alpha))
 
-    return image.convert("RGB").quantize(colors=128, method=Image.Quantize.MEDIANCUT)
+    return image.convert("RGB").quantize(colors=108, method=Image.Quantize.MEDIANCUT)
 
 
 def strip_frame(frame: int, width: int = 1200, height: int = 138) -> Image.Image:
-    t = frame / 20 * pi * 2
-    image = Image.new("RGBA", (width, height), (9, 13, 18, 255))
+    t = frame / 24 * pi * 2
+    image = Image.new("RGBA", (width, height), (*INK, 255))
+    depth = Image.new("RGBA", image.size, (0, 0, 0, 0))
+    depth_draw = ImageDraw.Draw(depth)
+    depth_draw.ellipse((255, -70, 955, 194), fill=(*TEAL, 11))
+    image.alpha_composite(depth.filter(ImageFilter.GaussianBlur(56)))
     draw = ImageDraw.Draw(image, "RGBA")
     primary = chained_cubics(
         [
-            ((150, 69), (312, 14), (438, 124), (600, 69)),
-            ((600, 69), (762, 14), (888, 14), (1050, 69)),
+            ((150, 69), (314, 17), (447, 118), (600, 69)),
+            ((600, 69), (756, 20), (896, 16), (1050, 69)),
         ],
-        sin(t * 0.9) * 3,
+        sin(t * 0.8) * 2.2,
     )
-    for index in range(4):
-        offset = (index - 1.5) * 4
-        points = [(x, y + offset + sin(t + index) * 1.7) for x, y in primary]
-        draw_dashed_route(draw, points, TEAL, frame + index * 3, 110 if index < 2 else 82, 1)
-    for x, color, phase in [(150, TEAL, 0), (600, TEAL, 0.7), (1050, TEAL, 1.4)]:
-        y = 69 + sin(t * 0.9 + phase) * 3
-        glow(image, x, int(y), color, 5 + int((sin(t * 1.4 + phase) + 1) * 1.2))
-    return image.convert("RGB").quantize(colors=96, method=Image.Quantize.MEDIANCUT)
+    draw.line(primary, fill=(*TEAL, 116), width=2, joint="curve")
+    draw.line(primary, fill=(*MINT, 56), width=1, joint="curve")
+
+    for progress, size in [
+        (frame / 24 * 0.56 + 0.06, 3),
+        (frame / 24 * 0.42 + 0.53, 2),
+    ]:
+        draw_packet(image, primary, progress, TEAL, size)
+
+    for x, phase in [(150, 0), (600, 0.75), (1050, 1.5)]:
+        y = 69 + sin(t * 0.8 + phase) * 2.2
+        glow(image, x, int(y), TEAL, 5 + int((sin(t * 1.25 + phase) + 1) * 1.15))
+    return image.convert("RGB").quantize(colors=72, method=Image.Quantize.MEDIANCUT)
 
 
 def save_gif(path: Path, frames, duration: int):
@@ -171,8 +194,8 @@ def save_gif(path: Path, frames, duration: int):
 
 def main():
     ASSETS.mkdir(parents=True, exist_ok=True)
-    save_gif(ASSETS / "profile-signal-field.gif", [hero_frame(frame) for frame in range(24)], 82)
-    save_gif(ASSETS / "route-pulse-strip.gif", [strip_frame(frame) for frame in range(20)], 88)
+    save_gif(ASSETS / "profile-signal-field.gif", [hero_frame(frame) for frame in range(32)], 84)
+    save_gif(ASSETS / "route-pulse-strip.gif", [strip_frame(frame) for frame in range(24)], 90)
     print(ASSETS / "profile-signal-field.gif")
     print(ASSETS / "route-pulse-strip.gif")
 
