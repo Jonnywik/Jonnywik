@@ -1,6 +1,6 @@
 # Jonnywik
 
-![Animated Portfolio Command Center route map](./assets/profile-signal-field.svg)
+[![Portfolio Command Center route map with a static GitHub-safe fallback](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/profile-signal-field-fallback.png)](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/profile-signal-field.svg)
 
 > **Full-stack developer building operational software that keeps work moving.**
 
@@ -8,29 +8,23 @@ I build systems where the interface has to do more than look good: it has to cla
 
 **[Explore the Portfolio Command Center source](https://github.com/Jonnywik/Jonnywik.github.io)** · **[View GitHub work](https://github.com/Jonnywik)** · **[Trace featured systems](#featured-systems)**
 
-<p>
-  <a href="https://github.com/Jonnywik/Jonnywik.github.io"><img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=17&duration=2800&pause=1000&color=14B8A6&background=0D111700&center=false&vCenter=true&width=720&lines=Tracing+real+systems+from+interface+to+source.;Operational+clarity+%C2%B7+resilient+workflows+%C2%B7+responsible+boundaries." alt="Typing summary of Jonnywik's engineering focus" /></a>
-</p>
+> **Tracing real systems from interface to source.** Operational clarity, resilient workflows, and responsible boundaries.
 
-[![Animated route map connecting the three featured projects](./assets/route-node-pulse.svg)](https://github.com/Jonnywik/Jonnywik.github.io)
+**[Open the animated route map](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/profile-signal-field.svg)** · **[Explore the interactive portfolio](https://github.com/Jonnywik/Jonnywik.github.io)**
 
 **[Projects](#featured-systems)** · **[Build principles](#how-i-build)** · **[Technology map](#technology-focus)** · **[Start with the interactive portfolio](#start-here)**
 
-<p>
-  <a href="https://github.com/Jonnywik/Jonnywik.github.io"><img src="https://img.shields.io/badge/Portfolio-Command%20Center-0f1720?style=flat-square&labelColor=0f1720&color=14b8a6" alt="Portfolio Command Center" /></a>
-  <a href="https://github.com/Jonnywik/EnvScie-CommandCenter"><img src="https://img.shields.io/badge/Flagship-Resilience%20Command%20Center-0f1720?style=flat-square&labelColor=0f1720&color=14b8a6" alt="Resilience Command Center" /></a>
-  <a href="https://github.com/Jonnywik/employee-management-dashboard"><img src="https://img.shields.io/badge/Flagship-Employee%20Operations-0f1720?style=flat-square&labelColor=0f1720&color=f97316" alt="Employee Operations" /></a>
-  <a href="https://github.com/Jonnywik"><img src="https://komarev.com/ghpvc/?username=Jonnywik&style=flat-square&color=14b8a6&label=Profile%20views" alt="Profile views counted by Komarev" /></a>
-</p>
+**[Portfolio Command Center](https://github.com/Jonnywik/Jonnywik.github.io)** · **[Resilience Command Center](https://github.com/Jonnywik/EnvScie-CommandCenter)** · **[Employee Operations](https://github.com/Jonnywik/employee-management-dashboard)**
 
 ## Portfolio telemetry
 
-<p>
-  <a href="https://github.com/Jonnywik"><img height="170" src="https://github-readme-stats.vercel.app/api?username=Jonnywik&show_icons=true&hide_title=true&include_all_commits=true&count_private=false&hide_border=true&bg_color=0d1117&title_color=14b8a6&text_color=c9d1d9&icon_color=f97316" alt="Jonnywik's public GitHub statistics" /></a>
-  <a href="https://github.com/Jonnywik?tab=repositories"><img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Jonnywik&layout=compact&langs_count=6&hide_border=true&bg_color=0d1117&title_color=14b8a6&text_color=c9d1d9" alt="Jonnywik's most-used public languages" /></a>
-</p>
+| Public signal | Explore |
+| --- | --- |
+| **Repositories and source work** | [Open Jonnywik’s repositories](https://github.com/Jonnywik?tab=repositories) |
+| **Contribution activity** | [View GitHub activity](https://github.com/Jonnywik) |
+| **Technology footprint** | TypeScript, React, Next.js, Python, FastAPI, relational data systems, and mobile workflows. |
 
-> **Live public indicators.** The cards above are supplied by public GitHub-readme services and reflect available public repository metadata. The visitor badge is an external count, not an engagement or quality metric.
+> **Reliable by design.** The profile uses GitHub-hosted visual assets and text-based public links rather than third-party image services that can become unavailable.
 
 ## Featured systems
 
