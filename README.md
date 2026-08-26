@@ -14,9 +14,14 @@ I’m Jonnywik, a full-stack developer building resilient, user-centred operatio
 | **Interface focus** | Operational clarity, resilient workflows, and responsible boundaries. |
 | **Start a trace** | [Explore the Portfolio Command Center](https://github.com/Jonnywik/Jonnywik.github.io) · [View GitHub work](https://github.com/Jonnywik) · [Inspect featured systems](#02--evidence--decision--trace) |
 
-![Animated route bridge connecting featured work](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/route-pulse-strip.gif)
+### QUICK TRACE / SELECT A ROUTE
 
-**[Explore the interactive portfolio](https://github.com/Jonnywik/Jonnywik.github.io)** · **[Open the work map](#01--work-map)** · **[Read the build method](#03--method--decision--state)**
+| Route | Start here | What it gives you |
+| --- | --- | --- |
+| `01 / WORK MAP` | [Compare featured systems](#01--work-map) | Sanitized interface previews, system focus, and direct source links. |
+| `02 / DECISION RECORDS` | [Open evidence traces](#02--evidence--decision--trace) | Architecture, operational boundaries, and implementation context. |
+| `03 / BUILD METHOD` | [Read the active principles](#03--method--decision--state) | The operating ideas behind the product and engineering decisions. |
+| `PORTFOLIO / INTERACTIVE` | [Explore the Command Center](https://github.com/Jonnywik/Jonnywik.github.io) | Filters, case-study panels, and a navigable source-first experience. |
 
 ---
 
