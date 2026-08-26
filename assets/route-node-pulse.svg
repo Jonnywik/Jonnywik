@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="120" viewBox="0 0 960 120" role="img" aria-labelledby="title desc">
+  <title id="title">Portfolio Command Center route map</title>
+  <desc id="desc">An animated path connecting three project nodes: Resilience, Employee Operations, and Portfolio Command Center.</desc>
+  <rect width="960" height="120" rx="12" fill="#0d1117"/>
+  <path d="M120 60 C250 12 350 108 480 60 S710 12 840 60" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="6 10"/>
+  <path d="M120 60 C250 12 350 108 480 60 S710 12 840 60" fill="none" stroke="#14b8a6" stroke-width="3" stroke-linecap="round" stroke-dasharray="20 520">
+    <animate attributeName="stroke-dashoffset" from="540" to="0" dur="4s" repeatCount="indefinite"/>
+  </path>
+  <g fill="#0d1117" stroke="#14b8a6" stroke-width="3">
+    <circle cx="120" cy="60" r="10"><animate attributeName="r" values="10;14;10" dur="2.6s" repeatCount="indefinite"/></circle>
+    <circle cx="480" cy="60" r="10"><animate attributeName="r" values="10;14;10" dur="2.6s" begin="0.7s" repeatCount="indefinite"/></circle>
+    <circle cx="840" cy="60" r="10"><animate attributeName="r" values="10;14;10" dur="2.6s" begin="1.4s" repeatCount="indefinite"/></circle>
+  </g>
+  <g fill="#c9d1d9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" text-anchor="middle">
+    <text x="120" y="96">RESILIENCE</text>
+    <text x="480" y="96">EMPLOYEE OPS</text>
+    <text x="840" y="96">PORTFOLIO</text>
+  </g>
+</svg>

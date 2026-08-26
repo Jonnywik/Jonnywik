@@ -9,6 +9,14 @@ I build systems where the interface has to do more than look good: it has to cla
 **[Explore the Portfolio Command Center source](https://github.com/Jonnywik/Jonnywik.github.io)** · **[View GitHub work](https://github.com/Jonnywik)** · **[Trace featured systems](#featured-systems)**
 
 <p>
+  <a href="https://github.com/Jonnywik/Jonnywik.github.io"><img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=17&duration=2800&pause=1000&color=14B8A6&background=0D111700&center=false&vCenter=true&width=720&lines=Tracing+real+systems+from+interface+to+source.;Operational+clarity+%C2%B7+resilient+workflows+%C2%B7+responsible+boundaries." alt="Typing summary of Jonnywik's engineering focus" /></a>
+</p>
+
+[![Animated route map connecting the three featured projects](./assets/route-node-pulse.svg)](https://github.com/Jonnywik/Jonnywik.github.io)
+
+**[Projects](#featured-systems)** · **[Build principles](#how-i-build)** · **[Technology map](#technology-focus)** · **[Start with the interactive portfolio](#start-here)**
+
+<p>
   <a href="https://github.com/Jonnywik/Jonnywik.github.io"><img src="https://img.shields.io/badge/Portfolio-Command%20Center-0f1720?style=flat-square&labelColor=0f1720&color=14b8a6" alt="Portfolio Command Center" /></a>
   <a href="https://github.com/Jonnywik/EnvScie-CommandCenter"><img src="https://img.shields.io/badge/Flagship-Resilience%20Command%20Center-0f1720?style=flat-square&labelColor=0f1720&color=14b8a6" alt="Resilience Command Center" /></a>
   <a href="https://github.com/Jonnywik/employee-management-dashboard"><img src="https://img.shields.io/badge/Flagship-Employee%20Operations-0f1720?style=flat-square&labelColor=0f1720&color=f97316" alt="Employee Operations" /></a>
@@ -34,6 +42,17 @@ I build systems where the interface has to do more than look good: it has to cla
 
 [Read the repository](https://github.com/Jonnywik/EnvScie-CommandCenter) · [Explore the portfolio source](https://github.com/Jonnywik/Jonnywik.github.io)
 
+<details>
+<summary><strong>Open the resilience system trace</strong></summary>
+
+| Follow the evidence | What to inspect |
+| --- | --- |
+| **Architecture** | The FastAPI/PostGIS backend, Next.js command center, and Expo resident flow in the [repository architecture](https://github.com/Jonnywik/EnvScie-CommandCenter/blob/main/docs/architecture.md). |
+| **Safety boundary** | Decision-support and pilot infrastructure only; the README records what remains necessary before any live emergency-service deployment. |
+| **Interface preview** | The repository’s sanitized animated preview documents the command-center interface without presenting live municipal or incident data. |
+
+</details>
+
 ### [Employee Management Dashboard](https://github.com/Jonnywik/employee-management-dashboard)
 
 **Responsive HR operations workspace for onboarding, attendance, payroll, claims, and employee-facing workflows.** The application keeps process state, approval steps, and audit-oriented exports close to the work teams need to complete.
@@ -41,6 +60,36 @@ I build systems where the interface has to do more than look good: it has to cla
 `TypeScript` · `React` · `tRPC` · `Drizzle` · `MySQL` · `Vitest`
 
 [Read the repository](https://github.com/Jonnywik/employee-management-dashboard) · [Explore the portfolio source](https://github.com/Jonnywik/Jonnywik.github.io)
+
+<details>
+<summary><strong>Open the employee-operations system trace</strong></summary>
+
+| Follow the evidence | What to inspect |
+| --- | --- |
+| **Workflow coverage** | The application’s onboarding, attendance, claims, and payroll-approval paths in the [project README](https://github.com/Jonnywik/employee-management-dashboard#what-the-system-covers). |
+| **Implementation** | The React workspace, typed procedures, Drizzle persistence, and test tooling described in the repository’s architecture section. |
+| **Interface preview** | The repository’s animated demo view uses illustrative aggregates and neutral labels only. |
+
+</details>
+
+### [Portfolio Command Center](https://github.com/Jonnywik/Jonnywik.github.io)
+
+**Interactive source-first portfolio for operational software.** This companion experience turns the two flagship repositories into a navigable evidence map, using filters, case-study panels, decision records, and route-node visual language.
+
+`React` · `TypeScript` · `Vite` · `Tailwind CSS` · `Accessibility` · `Framer Motion`
+
+[Read the repository](https://github.com/Jonnywik/Jonnywik.github.io) · [Trace the interface design](https://github.com/Jonnywik/Jonnywik.github.io#experience-map)
+
+<details>
+<summary><strong>Open the portfolio system trace</strong></summary>
+
+| Follow the evidence | What to inspect |
+| --- | --- |
+| **Interaction model** | Project filtering, case-study selection, responsive navigation, theme control, and reduced-motion support. |
+| **Design reasoning** | The route-grid system, teal/orange operational signals, and source-first evidence hierarchy documented in the repository README. |
+| **Purpose** | A real portfolio surface that connects claims to public code rather than treating GitHub as a static résumé. |
+
+</details>
 
 ## How I build
 
