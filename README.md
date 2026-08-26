@@ -26,6 +26,12 @@ I’m Jonnywik, a full-stack developer building resilient, user-centred operatio
 
 ---
 
+![Animated Work Map divider showing one signal route branching to project destinations](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-work-map.gif)
+
+> **WORK MAP OVERVIEW.** Compare the two flagship operational systems through sanitized interface evidence, implementation focus, and direct source traces.
+>
+> **[Open the interactive Command Center](https://github.com/Jonnywik/Jonnywik.github.io)** · **[Inspect Resilience](https://github.com/Jonnywik/EnvScie-CommandCenter)** · **[Inspect Employee Operations](https://github.com/Jonnywik/employee-management-dashboard)**
+
 ## 01 / WORK MAP
 
 ### Follow the work, *not the noise.*
@@ -42,6 +48,12 @@ Each project is a traceable system: a problem, a design boundary, and the engine
 > **Evidence boundary.** The animated interface previews use sanitized, non-production demonstration content. They document the experience without representing live employee, emergency, municipal, or incident data.
 
 ---
+
+![Animated Decision Trace divider showing a signal packet entering layered evidence records](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-decision-trace.gif)
+
+> **DECISION TRACE OVERVIEW.** Move beyond the interface into architecture, operational boundaries, and the implementation context behind each featured system.
+>
+> **[Open the evidence records](#02--evidence--decision--trace)** · **[Read Command Center architecture](https://github.com/Jonnywik/EnvScie-CommandCenter/blob/main/docs/architecture.md)** · **[Explore the portfolio system map](https://github.com/Jonnywik/Jonnywik.github.io)**
 
 ## 02 / EVIDENCE / DECISION / TRACE
 
@@ -106,6 +118,12 @@ Each project is a traceable system: a problem, a design boundary, and the engine
 
 ---
 
+![Animated Method and State divider showing three signal lanes leading to principle nodes](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-method-state.gif)
+
+> **METHOD / DECISION / STATE OVERVIEW.** The work is guided by operational clarity, resilient workflows, and responsible-system boundaries—not visual polish alone.
+>
+> **[Read the active principles](#03--method--decision--state)** · **[See the interactive approach board](https://github.com/Jonnywik/Jonnywik.github.io)**
+
 ## 03 / METHOD / DECISION / STATE
 
 ### The system is only as good as the *thinking behind it.*
@@ -120,6 +138,12 @@ Each project is a traceable system: a problem, a design boundary, and the engine
 
 ---
 
+![Animated Portfolio Telemetry divider showing a measured signal rail with activity nodes](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-telemetry.gif)
+
+> **PORTFOLIO TELEMETRY OVERVIEW.** Review public repository, contribution, and technology signals as supporting evidence—not vanity metrics.
+>
+> **[Open repositories](https://github.com/Jonnywik?tab=repositories)** · **[View GitHub activity](https://github.com/Jonnywik)**
+
 ## 04 / PORTFOLIO TELEMETRY
 
 [![Jonnywik public GitHub activity snapshot](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/github-activity-card.png)](https://github.com/Jonnywik)
@@ -133,6 +157,12 @@ Each project is a traceable system: a problem, a design boundary, and the engine
 > **Reliable by design.** This profile uses GitHub-hosted visual assets and public source links rather than third-party image services that can become unavailable.
 
 ---
+
+![Animated Source-First divider showing a route from code marks toward an outward portfolio destination](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-source-first.gif)
+
+> **SOURCE-FIRST OVERVIEW.** Follow a project from its interface story to public source, decisions, and documented implementation boundaries.
+>
+> **[Open the Portfolio Command Center](https://github.com/Jonnywik/Jonnywik.github.io)** · **[Visit GitHub](https://github.com/Jonnywik)**
 
 ## SOURCE-FIRST PORTFOLIO
 
