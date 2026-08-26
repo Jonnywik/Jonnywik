@@ -1,6 +1,6 @@
 # Jonnywik
 
-[![Portfolio Command Center route map with a static GitHub-safe fallback](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/profile-signal-field-fallback.png)](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/profile-signal-field.svg)
+![Animated Portfolio Command Center route map](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/profile-signal-field.gif)
 
 > **Full-stack developer building operational software that keeps work moving.**
 
@@ -10,7 +10,9 @@ I build systems where the interface has to do more than look good: it has to cla
 
 > **Tracing real systems from interface to source.** Operational clarity, resilient workflows, and responsible boundaries.
 
-**[Open the animated route map](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/profile-signal-field.svg)** · **[Explore the interactive portfolio](https://github.com/Jonnywik/Jonnywik.github.io)**
+![Animated route pulse connecting the featured systems](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/route-pulse-strip.gif)
+
+**[Explore the interactive portfolio](https://github.com/Jonnywik/Jonnywik.github.io)**
 
 **[Projects](#featured-systems)** · **[Build principles](#how-i-build)** · **[Technology map](#technology-focus)** · **[Start with the interactive portfolio](#start-here)**
 
