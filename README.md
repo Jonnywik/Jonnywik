@@ -18,6 +18,8 @@ I build systems where the interface has to do more than look good: it has to cla
 
 ## Portfolio telemetry
 
+[![Jonnywik public GitHub activity snapshot](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/github-activity-card.png)](https://github.com/Jonnywik)
+
 | Public signal | Explore |
 | --- | --- |
 | **Repositories and source work** | [Open Jonnywik’s repositories](https://github.com/Jonnywik?tab=repositories) |
