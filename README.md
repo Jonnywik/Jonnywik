@@ -26,6 +26,15 @@ I build systems where the interface has to do more than look good: it has to cla
 
 > **Reliable by design.** The profile uses GitHub-hosted visual assets and text-based public links rather than third-party image services that can become unavailable.
 
+## Featured previews
+
+<p>
+  <a href="https://github.com/Jonnywik/EnvScie-CommandCenter"><img width="48%" src="https://raw.githubusercontent.com/Jonnywik/EnvScie-CommandCenter/main/docs/assets/command-center-preview.gif" alt="Animated sanitized preview of the Resilience Command Center" /></a>
+  <a href="https://github.com/Jonnywik/employee-management-dashboard"><img width="48%" src="https://raw.githubusercontent.com/Jonnywik/employee-management-dashboard/main/docs/assets/employee-dashboard-preview.gif" alt="Animated sanitized preview of the Employee Management Dashboard" /></a>
+</p>
+
+> **Self-hosted animated previews.** Both interface GIFs are served from their public GitHub repositories and use sanitized, non-production demonstration content.
+
 ## Featured systems
 
 ### [Code for Resilience — Command Center](https://github.com/Jonnywik/EnvScie-CommandCenter)
