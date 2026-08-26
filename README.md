@@ -1,50 +1,47 @@
 # Jonnywik
 
-> **Full-stack developer building resilient, user-centred operational software.**
+![Portfolio Command Center systems map](./assets/portfolio-command-center.svg)
 
-I design and build practical applications that turn complex workflows into clear, reliable experiences. My current work spans **TypeScript**, **React**, **Next.js**, **Python/FastAPI**, and relational data systems, with particular interest in operational dashboards, offline-aware tools, and public-service technology.
+> **Full-stack developer building operational software that keeps work moving.**
 
-## What I build
+I build systems where the interface has to do more than look good: it has to clarify the next decision, retain useful state, and behave responsibly when workflows become complex. My current focus spans TypeScript, React, Next.js, Python/FastAPI, and relational data systems.
 
-I enjoy working across the product and engineering lifecycle: clarifying real-world workflows, shaping intuitive interfaces, designing application and data layers, and building safeguards that make systems easier to operate responsibly.
+**[Explore the Portfolio Command Center](https://jonnywik.github.io)** · **[View GitHub work](https://github.com/Jonnywik)** · **[Trace featured systems](#featured-systems)**
 
-| Area | What I focus on |
+## Featured systems
+
+### [Code for Resilience — Command Center](https://github.com/Jonnywik/EnvScie-CommandCenter)
+
+**Disaster-management platform foundation for local emergency operations.** The system brings together a FastAPI/PostGIS backend, a command-center dashboard, and an offline-aware resident mobile experience. It is designed as decision support and development/pilot infrastructure—not as a certified live emergency-service deployment.
+
+`FastAPI` · `PostGIS` · `Next.js` · `React Native` · `Expo` · `WebSockets`
+
+[Read the repository](https://github.com/Jonnywik/EnvScie-CommandCenter) · [Explore the case study](https://jonnywik.github.io/#case-study)
+
+### [Employee Management Dashboard](https://github.com/Jonnywik/employee-management-dashboard)
+
+**Responsive HR operations workspace for onboarding, attendance, payroll, claims, and employee-facing workflows.** The application keeps process state, approval steps, and audit-oriented exports close to the work teams need to complete.
+
+`TypeScript` · `React` · `tRPC` · `Drizzle` · `MySQL` · `Vitest`
+
+[Read the repository](https://github.com/Jonnywik/employee-management-dashboard) · [Explore the case study](https://jonnywik.github.io/#case-study)
+
+## How I build
+
+| Principle | What it means in practice |
 | --- | --- |
-| **Operational software** | Dashboards and workflow tools for teams managing people, information, and decisions. |
-| **Resilient applications** | Systems that consider unreliable connectivity, clear status feedback, safe fallbacks, and real-world constraints. |
-| **Full-stack delivery** | Type-safe interfaces, API design, relational data modelling, testing, and production-minded engineering. |
-
-## Featured work
-
-| Project | Overview | Technologies |
-| --- | --- | --- |
-| [Code for Resilience — Command Center](https://github.com/Jonnywik/EnvScie-CommandCenter) | A disaster-management platform foundation for local emergency operations, combining an LGU command-center dashboard, FastAPI services, geospatial data support, and an offline-aware resident mobile experience. The project explicitly distinguishes decision support from live emergency-service deployment. | FastAPI, PostGIS, Next.js, React Native, Expo, WebSockets |
-| [Employee Management Dashboard](https://github.com/Jonnywik/employee-management-dashboard) | A responsive HR operations dashboard supporting employee onboarding, attendance, payroll approvals, claims, and employee-facing workflows. | TypeScript, React, tRPC, Drizzle, MySQL, Vitest |
-
-## How I approach software
-
-I aim to make software **useful, understandable, and trustworthy**. That means designing around the user’s operational context, treating edge cases and failure states as first-class work, and documenting assumptions and limitations rather than hiding them.
-
-For systems with real-world impact, I value explicit safeguards: clear approval boundaries, auditability, thoughtful data handling, and honest communication about what a prototype or foundation can—and cannot—do.
+| **Operational clarity** | Interfaces should make state, actions, and consequences easy to understand at a glance. |
+| **Resilient workflows** | Connectivity, uncertainty, approval boundaries, and partial failures are product concerns—not afterthoughts. |
+| **Responsible systems** | Useful software states its limitations, protects critical decisions, and does not overclaim what it can do. |
 
 ## Technology focus
 
-```text
-Frontend       TypeScript · React · Next.js · Tailwind CSS
-Backend        Python · FastAPI · Node.js · tRPC
-Data           MySQL · PostgreSQL · PostGIS · Drizzle ORM
-Quality        Vitest · TypeScript checks · API testing · build validation
-Mobile         React Native · Expo · offline-aware workflows
-```
+`TypeScript` · `React` · `Next.js` · `Python` · `FastAPI` · `Node.js` · `tRPC` · `PostgreSQL` · `PostGIS` · `MySQL` · `Drizzle ORM` · `Vitest` · `React Native` · `Expo`
 
-## Currently developing
+## Start here
 
-I am continuing to deepen my full-stack engineering practice through production-minded applications: improving application architecture, test coverage, deployment workflows, and the clarity of the developer and user experience.
-
-## Explore my work
-
-The best place to start is the [Command Center](https://github.com/Jonnywik/EnvScie-CommandCenter) for system breadth and the [Employee Management Dashboard](https://github.com/Jonnywik/employee-management-dashboard) for a focused business-workflow application.
+The **[Portfolio Command Center](https://jonnywik.github.io)** is the quickest way to explore the projects, their systems thinking, and the decisions behind the interface. Every feature story links back to its source code and documentation.
 
 ---
 
-*This profile is a curated view of the projects I am most prepared to discuss: the problem they address, the technical decisions behind them, and the lessons learned while building them.*
+*A source-first portfolio: real projects, documented boundaries, and evidence over vanity metrics.*

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" role="img" aria-labelledby="title desc">
+  <title id="title">Portfolio Command Center systems map</title>
+  <desc id="desc">An abstract dark systems map with connected teal and orange signal points.</desc>
+  <defs>
+    <linearGradient id="glow" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#2dd4bf" stop-opacity=".42"/><stop offset="1" stop-color="#a78bfa" stop-opacity=".03"/></linearGradient>
+    <radialGradient id="field"><stop stop-color="#17313b"/><stop offset=".62" stop-color="#0d1117"/><stop offset="1" stop-color="#070a0e"/></radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#c8d7de" stroke-opacity=".08"/></pattern>
+    <filter id="blur"><feGaussianBlur stdDeviation="20"/></filter>
+  </defs>
+  <rect width="1200" height="480" fill="url(#field)"/>
+  <rect width="1200" height="480" fill="url(#grid)"/>
+  <g fill="none" stroke="#2dd4bf" stroke-opacity=".19">
+    <path d="M-20 355C101 241 188 445 328 321S497 190 627 283s211 39 330-89 191-68 263-165" stroke-width="1.5"/>
+    <path d="M-40 397C82 271 213 473 355 349s165-147 289-67 229 21 346-105 187-67 255-152"/>
+    <path d="M-40 314C88 214 168 405 300 286S480 154 612 249s215 47 341-76 201-61 277-149"/>
+    <path d="M-40 269C86 173 199 361 323 240S500 113 625 210s217 48 338-68 190-52 269-128"/>
+  </g>
+  <path d="M508 446C606 357 639 321 708 302s92-115 172-146 140 14 209-84" fill="none" stroke="url(#glow)" stroke-width="2"/>
+  <g filter="url(#blur)" opacity=".45"><circle cx="723" cy="296" r="32" fill="#2dd4bf"/><circle cx="943" cy="150" r="27" fill="#fb923c"/><circle cx="1070" cy="82" r="24" fill="#a78bfa"/></g>
+  <g>
+    <circle cx="723" cy="296" r="7" fill="#2dd4bf"/><circle cx="723" cy="296" r="14" fill="none" stroke="#2dd4bf" stroke-opacity=".42"/>
+    <circle cx="943" cy="150" r="7" fill="#fb923c"/><circle cx="943" cy="150" r="14" fill="none" stroke="#fb923c" stroke-opacity=".45"/>
+    <circle cx="1070" cy="82" r="6" fill="#a78bfa"/><circle cx="1070" cy="82" r="12" fill="none" stroke="#a78bfa" stroke-opacity=".43"/>
+  </g>
+  <g fill="#eff5f7" fill-opacity=".48" font-family="ui-monospace, monospace" font-size="11" letter-spacing="2"><text x="64" y="80">PORTFOLIO / COMMAND CENTER</text><text x="64" y="106">SYSTEMS · PEOPLE · RESILIENCE</text><text x="1024" y="440">14° 35’ / 125° 11’</text></g>
+</svg>
