@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Jonnywik Portfolio Command Center animated route map</title>
+  <desc id="desc">A dark command-center map with moving teal spline lines, travelling signal packets, and teal, orange, and violet nodes.</desc>
+  <defs>
+    <pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M 46 0 L 0 0 0 46" fill="none" stroke="#9fb0bd" stroke-opacity=".08" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="haze" cx="58%" cy="58%" r="48%"><stop offset="0" stop-color="#2dd4bf" stop-opacity=".15"/><stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/></radialGradient>
+    <linearGradient id="tealLine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2dd4bf" stop-opacity=".05"/><stop offset=".34" stop-color="#2dd4bf" stop-opacity=".48"/><stop offset=".73" stop-color="#5eead4" stop-opacity=".9"/><stop offset="1" stop-color="#2dd4bf" stop-opacity=".05"/></linearGradient>
+    <linearGradient id="violetLine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a78bfa" stop-opacity="0"/><stop offset=".7" stop-color="#a78bfa" stop-opacity=".65"/><stop offset="1" stop-color="#a78bfa" stop-opacity="0"/></linearGradient>
+    <linearGradient id="orangeLine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fb923c" stop-opacity="0"/><stop offset=".56" stop-color="#fb923c" stop-opacity=".75"/><stop offset="1" stop-color="#fb923c" stop-opacity="0"/></linearGradient>
+    <filter id="glow" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="7" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <path id="routeA" d="M-36 287 C117 232 176 350 330 278 S534 166 647 237 S786 346 934 184 S1087 38 1234 78"/>
+    <path id="routeB" d="M-22 320 C117 267 216 371 379 300 S555 198 674 269 S839 357 969 170 S1110 59 1226 96"/>
+    <path id="routeC" d="M-30 350 C122 305 238 393 412 326 S598 231 698 295 S869 372 997 203 S1120 79 1228 117"/>
+    <path id="routeD" d="M479 409 C582 315 670 250 780 273 S914 310 1032 166 S1135 70 1230 32"/>
+    <path id="routeE" d="M621 423 C718 337 779 239 891 223 S1019 146 1114 48 S1176 15 1226 8"/>
+  </defs>
+  <rect width="1200" height="420" fill="#090d12"/>
+  <rect width="1200" height="420" fill="url(#grid)"/>
+  <rect width="1200" height="420" fill="url(#haze)"/>
+  <rect x="1" y="1" width="1198" height="418" fill="none" stroke="#dce8ed" stroke-opacity=".12"/>
+  <g fill="none" stroke-linecap="round" stroke-width="1.35">
+    <use href="#routeA" stroke="url(#tealLine)" stroke-dasharray="16 18 8 28"><animate attributeName="stroke-dashoffset" from="0" to="-286" dur="13s" repeatCount="indefinite"/></use>
+    <use href="#routeB" stroke="url(#tealLine)" stroke-dasharray="13 22 6 26"><animate attributeName="stroke-dashoffset" from="-286" to="0" dur="17s" repeatCount="indefinite"/></use>
+    <use href="#routeC" stroke="url(#tealLine)" stroke-opacity=".74" stroke-dasharray="18 16 5 30"><animate attributeName="stroke-dashoffset" from="0" to="-310" dur="22s" repeatCount="indefinite"/></use>
+    <use href="#routeD" stroke="url(#violetLine)" stroke-dasharray="13 23"><animate attributeName="stroke-dashoffset" from="-270" to="0" dur="18s" repeatCount="indefinite"/></use>
+    <use href="#routeE" stroke="url(#orangeLine)" stroke-dasharray="11 24"><animate attributeName="stroke-dashoffset" from="0" to="-240" dur="20s" repeatCount="indefinite"/></use>
+  </g>
+  <g fill="#d6fff9" filter="url(#glow)">
+    <circle r="4.5"><animateMotion dur="6s" repeatCount="indefinite" path="M-36 287 C117 232 176 350 330 278 S534 166 647 237 S786 346 934 184 S1087 38 1234 78"/></circle>
+    <circle r="3.5"><animateMotion dur="8.5s" begin="-2.5s" repeatCount="indefinite" path="M-22 320 C117 267 216 371 379 300 S555 198 674 269 S839 357 969 170 S1110 59 1226 96"/></circle>
+    <circle r="3.5"><animateMotion dur="10s" begin="-5s" repeatCount="indefinite" path="M479 409 C582 315 670 250 780 273 S914 310 1032 166 S1135 70 1230 32"/></circle>
+  </g>
+  <g filter="url(#glow)">
+    <g transform="translate(734 273)"><circle r="21" fill="none" stroke="#2dd4bf" stroke-opacity=".45"><animate attributeName="r" values="15;25;15" dur="3s" repeatCount="indefinite"/></circle><circle r="7" fill="#2dd4bf" stroke="#d6fff9" stroke-width="1.3"/></g>
+    <g transform="translate(957 149)"><circle r="18" fill="none" stroke="#fb923c" stroke-opacity=".45"><animate attributeName="r" values="13;22;13" dur="3.4s" begin="-.8s" repeatCount="indefinite"/></circle><circle r="6" fill="#fb923c" stroke="#fff0e4" stroke-width="1.3"/></g>
+    <g transform="translate(1080 84)"><circle r="16" fill="none" stroke="#a78bfa" stroke-opacity=".46"><animate attributeName="r" values="12;20;12" dur="3.7s" begin="-1.6s" repeatCount="indefinite"/></circle><circle r="5" fill="#a78bfa" stroke="#f0ebff" stroke-width="1.3"/></g>
+  </g>
+</svg>

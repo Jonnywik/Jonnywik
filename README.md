@@ -1,6 +1,6 @@
 # Jonnywik
 
-![Portfolio Command Center systems map](./assets/portfolio-command-center.svg)
+![Animated Portfolio Command Center route map](./assets/profile-signal-field.svg)
 
 > **Full-stack developer building operational software that keeps work moving.**
 
