@@ -12,15 +12,77 @@ VIOLET = (167, 139, 250)
 WHITE = (220, 248, 243)
 
 
-def route_points(width: int, baseline: float, amplitude: float, phase: float, lift: float, t: float):
+def cubic(start, control_one, control_two, end, steps: int = 34):
     points = []
-    for x in range(-40, width + 42, 5):
-        progress = x / width
-        wave = sin(progress * pi * 2.25 + phase + t * 0.22) * amplitude
-        rising = -max(0, progress - 0.47) * lift
-        micro = sin(progress * pi * 6 + phase + t * 0.65) * 3.2
-        points.append((x, baseline + wave + rising + micro))
+    for step in range(steps + 1):
+        value = step / steps
+        inverse = 1 - value
+        x = (
+            inverse**3 * start[0]
+            + 3 * inverse**2 * value * control_one[0]
+            + 3 * inverse * value**2 * control_two[0]
+            + value**3 * end[0]
+        )
+        y = (
+            inverse**3 * start[1]
+            + 3 * inverse**2 * value * control_one[1]
+            + 3 * inverse * value**2 * control_two[1]
+            + value**3 * end[1]
+        )
+        points.append((x, y))
     return points
+
+
+def chained_cubics(segments, vertical_offset: float = 0):
+    points = []
+    for index, segment in enumerate(segments):
+        curve = cubic(*segment)
+        if index:
+            curve = curve[1:]
+        points.extend((x, y + vertical_offset) for x, y in curve)
+    return points
+
+
+def original_routes(t: float):
+    route_segments = [
+        [
+            ((-20, 355), (101, 241), (188, 445), (328, 321)),
+            ((328, 321), (468, 197), (497, 190), (627, 283)),
+            ((627, 283), (757, 376), (838, 322), (957, 194)),
+            ((957, 194), (1076, 66), (1148, 126), (1220, 29)),
+        ],
+        [
+            ((-40, 397), (82, 271), (213, 473), (355, 349)),
+            ((355, 349), (497, 225), (520, 202), (644, 282)),
+            ((644, 282), (768, 362), (873, 303), (990, 177)),
+            ((990, 177), (1107, 51), (1177, 110), (1245, 25)),
+        ],
+        [
+            ((-40, 314), (88, 214), (168, 405), (300, 286)),
+            ((300, 286), (432, 167), (480, 154), (612, 249)),
+            ((612, 249), (744, 344), (827, 296), (953, 173)),
+            ((953, 173), (1079, 50), (1154, 112), (1230, 24)),
+        ],
+        [
+            ((-40, 269), (86, 173), (199, 361), (323, 240)),
+            ((323, 240), (447, 119), (500, 113), (625, 210)),
+            ((625, 210), (750, 307), (842, 258), (963, 142)),
+            ((963, 142), (1084, 26), (1153, 90), (1232, 14)),
+        ],
+    ]
+    paths = []
+    for index, segments in enumerate(route_segments):
+        drift = sin(t * 0.8 + index * 0.72) * (3.4 + index * 0.6)
+        paths.append(chained_cubics(segments, drift))
+    accent = chained_cubics(
+        [
+            ((508, 446), (606, 357), (639, 321), (708, 302)),
+            ((708, 302), (777, 283), (800, 187), (880, 156)),
+            ((880, 156), (960, 125), (1020, 170), (1089, 72)),
+        ],
+        sin(t * 0.78 + 1.1) * 3.5,
+    )
+    return paths, accent
 
 
 def draw_dashed_route(draw: ImageDraw.ImageDraw, points, color, shift: int, opacity: int, width: int = 2):
@@ -56,49 +118,51 @@ def hero_frame(frame: int, width: int = 1200, height: int = 420) -> Image.Image:
     draw_grid(draw, width, height)
     draw.rectangle((1, 1, width - 2, height - 2), outline=(196, 221, 226, 34), width=1)
 
-    specs = [
-        (282, 38, 0.05, 226, TEAL, 168),
-        (311, 42, 0.42, 238, TEAL, 128),
-        (340, 45, 0.78, 246, TEAL, 108),
-        (382, 25, 1.22, 282, VIOLET, 120),
-        (402, 20, 1.72, 312, ORANGE, 105),
-    ]
-    routes = []
-    for line_index, (baseline, amp, phase, lift, color, opacity) in enumerate(specs):
-        vertical = sin(t * 1.15 + line_index * 0.92) * (7 + line_index)
-        points = route_points(width, baseline + vertical, amp, phase, lift, t)
-        routes.append(points)
-        draw_dashed_route(draw, points, color, int(frame * 1.4 + line_index * 3), opacity, 2 if line_index < 3 else 1)
+    routes, accent = original_routes(t)
+    for line_index, points in enumerate(routes):
+        draw_dashed_route(draw, points, TEAL, int(frame * 0.9 + line_index * 2), 106 + line_index * 20, 1)
+    draw_dashed_route(draw, accent, TEAL, int(frame * 1.3), 166, 2)
 
-    node_indices = [(0, 142, TEAL, 10), (1, 183, TEAL, 7), (3, 216, ORANGE, 8), (2, 221, VIOLET, 7)]
-    for route_index, point_index, color, radius in node_indices:
-        x, y = routes[route_index][min(point_index, len(routes[route_index]) - 1)]
-        glow(image, int(x), int(y), color, radius)
+    for x, y, color, radius, phase in [
+        (723, 296, TEAL, 11, 0),
+        (943, 150, ORANGE, 10, 0.7),
+        (1070, 82, VIOLET, 9, 1.4),
+    ]:
+        drift = sin(t * 0.8 + phase) * 3
+        glow(image, x, int(y + drift), color, radius + int((sin(t * 1.25 + phase) + 1) * 1.5))
 
     particle_draw = ImageDraw.Draw(image, "RGBA")
-    for particle_index in range(22):
+    for particle_index in range(15):
         route = routes[particle_index % len(routes)]
-        location = int((particle_index * 31 + frame * (3 + particle_index % 4)) % (len(route) - 1))
+        location = int((particle_index * 37 + frame * (2 + particle_index % 3)) % (len(route) - 1))
         x, y = route[location]
-        rise = sin(t * 1.8 + particle_index) * 5
-        color = TEAL if particle_index % 5 else ORANGE if particle_index % 7 else VIOLET
-        radius = 1 + particle_index % 2
+        rise = sin(t * 1.45 + particle_index) * 3
+        color = TEAL if particle_index % 6 else ORANGE if particle_index % 7 else VIOLET
+        radius = 1 if particle_index % 3 else 2
         particle_draw.ellipse((x - radius, y + rise - radius, x + radius, y + rise + radius), fill=(*color, 185))
 
-    return image.convert("P", palette=Image.Palette.ADAPTIVE, colors=128)
+    return image.convert("RGB").quantize(colors=128, method=Image.Quantize.MEDIANCUT)
 
 
 def strip_frame(frame: int, width: int = 1200, height: int = 138) -> Image.Image:
     t = frame / 20 * pi * 2
     image = Image.new("RGBA", (width, height), (9, 13, 18, 255))
     draw = ImageDraw.Draw(image, "RGBA")
-    for index, color in enumerate((TEAL, TEAL, VIOLET, ORANGE)):
-        baseline = 76 + index * 9
-        points = route_points(width, baseline + sin(t + index) * 5, 14 + index * 3, 0.4 * index, 66, t)
-        draw_dashed_route(draw, points, color, frame + index * 2, 142 if index < 2 else 110, 1)
-        spot = points[int((frame * 8 + index * 79) % len(points))]
-        draw.ellipse((spot[0] - 2, spot[1] - 2, spot[0] + 2, spot[1] + 2), fill=(*color, 230))
-    return image.convert("P", palette=Image.Palette.ADAPTIVE, colors=96)
+    primary = chained_cubics(
+        [
+            ((150, 69), (312, 14), (438, 124), (600, 69)),
+            ((600, 69), (762, 14), (888, 14), (1050, 69)),
+        ],
+        sin(t * 0.9) * 3,
+    )
+    for index in range(4):
+        offset = (index - 1.5) * 4
+        points = [(x, y + offset + sin(t + index) * 1.7) for x, y in primary]
+        draw_dashed_route(draw, points, TEAL, frame + index * 3, 110 if index < 2 else 82, 1)
+    for x, color, phase in [(150, TEAL, 0), (600, TEAL, 0.7), (1050, TEAL, 1.4)]:
+        y = 69 + sin(t * 0.9 + phase) * 3
+        glow(image, x, int(y), color, 5 + int((sin(t * 1.4 + phase) + 1) * 1.2))
+    return image.convert("RGB").quantize(colors=96, method=Image.Quantize.MEDIANCUT)
 
 
 def save_gif(path: Path, frames, duration: int):
