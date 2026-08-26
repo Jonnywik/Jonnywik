@@ -26,7 +26,7 @@ I’m Jonnywik, a full-stack developer building resilient, user-centred operatio
 
 ---
 
-![Animated Work Map divider showing one signal route branching to project destinations](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-work-map.gif)
+![Animated Work Map divider summarizing featured systems, evidence, and source destinations](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-work-map.gif)
 
 > **WORK MAP OVERVIEW.** Compare the two flagship operational systems through sanitized interface evidence, implementation focus, and direct source traces.
 >
@@ -49,7 +49,7 @@ Each project is a traceable system: a problem, a design boundary, and the engine
 
 ---
 
-![Animated Decision Trace divider showing a signal packet entering layered evidence records](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-decision-trace.gif)
+![Animated Decision Trace divider summarizing architecture, operational boundaries, and evidence records](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-decision-trace.gif)
 
 > **DECISION TRACE OVERVIEW.** Move beyond the interface into architecture, operational boundaries, and the implementation context behind each featured system.
 >
@@ -118,7 +118,7 @@ Each project is a traceable system: a problem, a design boundary, and the engine
 
 ---
 
-![Animated Method and State divider showing three signal lanes leading to principle nodes](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-method-state.gif)
+![Animated Method and State divider summarizing clarity, resilience, and responsible-system boundaries](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-method-state.gif)
 
 > **METHOD / DECISION / STATE OVERVIEW.** The work is guided by operational clarity, resilient workflows, and responsible-system boundaries—not visual polish alone.
 >
@@ -138,7 +138,7 @@ Each project is a traceable system: a problem, a design boundary, and the engine
 
 ---
 
-![Animated Portfolio Telemetry divider showing a measured signal rail with activity nodes](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-telemetry.gif)
+![Animated Portfolio Telemetry divider summarizing public repositories, activity, and technology signals](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-telemetry.gif)
 
 > **PORTFOLIO TELEMETRY OVERVIEW.** Review public repository, contribution, and technology signals as supporting evidence—not vanity metrics.
 >
@@ -158,7 +158,7 @@ Each project is a traceable system: a problem, a design boundary, and the engine
 
 ---
 
-![Animated Source-First divider showing a route from code marks toward an outward portfolio destination](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-source-first.gif)
+![Animated Source-First divider summarizing the route from project story to public implementation](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-source-first.gif)
 
 > **SOURCE-FIRST OVERVIEW.** Follow a project from its interface story to public source, decisions, and documented implementation boundaries.
 >
