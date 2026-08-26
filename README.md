@@ -6,7 +6,7 @@
 
 I build systems where the interface has to do more than look good: it has to clarify the next decision, retain useful state, and behave responsibly when workflows become complex. My current focus spans TypeScript, React, Next.js, Python/FastAPI, and relational data systems.
 
-**[Explore the Portfolio Command Center](https://jonnywik.github.io)** · **[View GitHub work](https://github.com/Jonnywik)** · **[Trace featured systems](#featured-systems)**
+**[Explore the Portfolio Command Center source](https://github.com/Jonnywik/Jonnywik.github.io)** · **[View GitHub work](https://github.com/Jonnywik)** · **[Trace featured systems](#featured-systems)**
 
 ## Featured systems
 
@@ -16,7 +16,7 @@ I build systems where the interface has to do more than look good: it has to cla
 
 `FastAPI` · `PostGIS` · `Next.js` · `React Native` · `Expo` · `WebSockets`
 
-[Read the repository](https://github.com/Jonnywik/EnvScie-CommandCenter) · [Explore the case study](https://jonnywik.github.io/#case-study)
+[Read the repository](https://github.com/Jonnywik/EnvScie-CommandCenter) · [Explore the portfolio source](https://github.com/Jonnywik/Jonnywik.github.io)
 
 ### [Employee Management Dashboard](https://github.com/Jonnywik/employee-management-dashboard)
 
@@ -24,7 +24,7 @@ I build systems where the interface has to do more than look good: it has to cla
 
 `TypeScript` · `React` · `tRPC` · `Drizzle` · `MySQL` · `Vitest`
 
-[Read the repository](https://github.com/Jonnywik/employee-management-dashboard) · [Explore the case study](https://jonnywik.github.io/#case-study)
+[Read the repository](https://github.com/Jonnywik/employee-management-dashboard) · [Explore the portfolio source](https://github.com/Jonnywik/Jonnywik.github.io)
 
 ## How I build
 
@@ -40,7 +40,7 @@ I build systems where the interface has to do more than look good: it has to cla
 
 ## Start here
 
-The **[Portfolio Command Center](https://jonnywik.github.io)** is the quickest way to explore the projects, their systems thinking, and the decisions behind the interface. Every feature story links back to its source code and documentation.
+The **[Portfolio Command Center source](https://github.com/Jonnywik/Jonnywik.github.io)** is the quickest way to inspect the projects, their systems thinking, and the decisions behind the interface. Every feature story links back to its source code and documentation.
 
 ---
 
