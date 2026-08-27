@@ -17,7 +17,7 @@ I build resilient operational software with clear safeguards and usable workflow
 ### SIGNAL NODES / EXPAND FOR PROJECT DETAIL
 
 <details>
-<summary><strong>NODE 01 / SYSTEM</strong>: Resilience Command Center</summary>
+<summary><strong>NODE 01 / SYSTEM</strong><br />Resilience Command Center</summary>
 
 **System signal.** A resilience foundation that combines FastAPI, PostGIS, a command-center interface, and offline-aware mobile workflows.
 
@@ -28,7 +28,7 @@ I build resilient operational software with clear safeguards and usable workflow
 </details>
 
 <details>
-<summary><strong>NODE 02 / EVIDENCE</strong>: Employee Management Dashboard</summary>
+<summary><strong>NODE 02 / EVIDENCE</strong><br />Employee Management Dashboard</summary>
 
 **System signal.** A responsive workspace for onboarding, attendance, payroll approvals, claims, and employee tasks.
 
@@ -39,7 +39,7 @@ I build resilient operational software with clear safeguards and usable workflow
 </details>
 
 <details>
-<summary><strong>NODE 03 / SOURCE</strong>: Portfolio Command Center</summary>
+<summary><strong>NODE 03 / SOURCE</strong><br />Portfolio Command Center</summary>
 
 **System signal.** An interactive portfolio with filters, case studies, interface evidence, and engineering decisions.
 
@@ -191,6 +191,29 @@ The interface keeps workflow state, approval steps, and audit-ready exports clos
 
 **LIVE PUBLIC ROUTES:** **[Repositories](https://github.com/Jonnywik?tab=repositories)** · **[Contribution activity](https://github.com/Jonnywik)** · **[Featured projects](https://github.com/Jonnywik?tab=projects)**
 
+### RECENT ACTIVITY / ACROSS PUBLIC REPOSITORIES
+
+[![Self-hosted recent GitHub activity feed showing current public pushes and pull-request review state](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/recent-activity-feed.png)](https://github.com/Jonnywik)
+
+<!-- RECENT_ACTIVITY:START -->
+<details>
+<summary><strong>OPEN RECENT SIGNALS</strong><br />Latest public pushes and PR review state</summary>
+
+**[Jonnywik/transit-planner · 5a7ff1c](https://github.com/Jonnywik/transit-planner/commit/5a7ff1c8250f0c34d80bc39d15860d67230893f8)**: pushed to `main` 57m ago.
+
+**[Jonnywik/Jonnywik · 21a8b65](https://github.com/Jonnywik/Jonnywik/commit/21a8b6574fb76cb6217787f5e5018aa3e096a89c)**: pushed to `main` 15h ago.
+
+**[Jonnywik/Jonnywik.github.io · 32b9fc6](https://github.com/Jonnywik/Jonnywik.github.io/commit/32b9fc6ea38c48c44999857877d9c8b7d08d57bf)**: pushed to `main` 16h ago.
+
+**[Jonnywik/EnvScie-CommandCenter · 55fc0cc](https://github.com/Jonnywik/EnvScie-CommandCenter/commit/55fc0cc2e87fc06b2fb50bf00fd8a745fab13f40)**: pushed to `main` 16h ago.
+
+**PR review signal:** No public review contributions are recorded in the current activity window.
+
+**[View live GitHub activity](https://github.com/Jonnywik)** · **[Open repositories](https://github.com/Jonnywik?tab=repositories)**
+
+</details>
+<!-- RECENT_ACTIVITY:END -->
+
 | Public signal | Inspect |
 | --- | --- |
 | **Repositories and source work** | [Open Jonnywik’s repositories](https://github.com/Jonnywik?tab=repositories) |
@@ -199,7 +222,7 @@ The interface keeps workflow state, approval steps, and audit-ready exports clos
 
 > **Reliable by design.** This profile uses GitHub-hosted assets and public source links.
 >
-> The contribution field refreshes daily from public GitHub GraphQL data, while the links above provide real-time details.
+> The contribution field and activity feed refresh daily from public GitHub data, while the links above provide real-time details.
 
 ---
 
