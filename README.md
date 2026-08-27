@@ -1,6 +1,6 @@
 # Jonnywik
 
-![Animated Signal Transit work map](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/profile-signal-field.gif)
+![Animated personalized Signal Transit profile banner for Mikael C. Lim, an IT student and systems builder, showing a portrait, education, achievement, and technical focus](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/profile-signal-field.gif)
 
 > `DOMAIN / SYSTEM / EVIDENCE`
 
