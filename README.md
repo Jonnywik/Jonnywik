@@ -14,6 +14,41 @@ I’m Jonnywik, a full-stack developer building resilient, user-centred operatio
 | **Interface focus** | Operational clarity, resilient workflows, and responsible boundaries. |
 | **Start a trace** | [Explore the Portfolio Command Center](https://github.com/Jonnywik/Jonnywik.github.io) · [View GitHub work](https://github.com/Jonnywik) · [Inspect featured systems](#02--evidence--decision--trace) |
 
+### SIGNAL NODES / EXPAND FOR PROJECT DETAIL
+
+<details>
+<summary><strong>NODE 01 / SYSTEM</strong> — Resilience Command Center</summary>
+
+**System signal.** Development foundation for resilient disaster-management operations, combining FastAPI, PostGIS, a command-center interface, and offline-aware mobile workflows.
+
+**Public repository snapshot:** `TypeScript` · `0 stars` · `0 forks` · `0 open issues`
+
+**[Open source and architecture](https://github.com/Jonnywik/EnvScie-CommandCenter)** · **[Read the decision record](#01--code-for-resilience--command-center)**
+
+</details>
+
+<details>
+<summary><strong>NODE 02 / EVIDENCE</strong> — Employee Management Dashboard</summary>
+
+**System signal.** Responsive operations workspace for onboarding, attendance, payroll approvals, claims, and employee-facing workflows.
+
+**Public repository snapshot:** `TypeScript` · `0 stars` · `0 forks` · `0 open issues` · `MIT`
+
+**[Open source repository](https://github.com/Jonnywik/employee-management-dashboard)** · **[Read the decision record](#02--employee-management-dashboard)**
+
+</details>
+
+<details>
+<summary><strong>NODE 03 / SOURCE</strong> — Portfolio Command Center</summary>
+
+**System signal.** Interactive source-first portfolio that connects project filters, case-study panels, interface evidence, and documented engineering decisions.
+
+**Public repository snapshot:** `TypeScript` · `0 stars` · `0 forks` · `0 open issues`
+
+**[Open portfolio source](https://github.com/Jonnywik/Jonnywik.github.io)** · **[Read the decision record](#03--portfolio-command-center)**
+
+</details>
+
 ### QUICK TRACE / SELECT A ROUTE
 
 **`01 / WORK MAP`** — [Compare featured systems](#01--work-map) for sanitized interface previews, system focus, and direct source links.
