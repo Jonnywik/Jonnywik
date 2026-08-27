@@ -181,7 +181,9 @@ Each project is a traceable system: a problem, a design boundary, and the engine
 
 ## 04 / PORTFOLIO TELEMETRY
 
-[![Jonnywik public GitHub activity snapshot](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/github-activity-card.png)](https://github.com/Jonnywik)
+[![Self-hosted GitHub contribution telemetry showing activity density and public profile metrics](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/github-activity-card.png)](https://github.com/Jonnywik)
+
+**LIVE PUBLIC ROUTES:** **[Repositories](https://github.com/Jonnywik?tab=repositories)** · **[Contribution activity](https://github.com/Jonnywik)** · **[Featured projects](https://github.com/Jonnywik?tab=projects)**
 
 | Public signal | Inspect |
 | --- | --- |
@@ -189,7 +191,7 @@ Each project is a traceable system: a problem, a design boundary, and the engine
 | **Contribution activity** | [View GitHub activity](https://github.com/Jonnywik) |
 | **Technology footprint** | TypeScript, React, Next.js, Python, FastAPI, relational data systems, and mobile workflows. |
 
-> **Reliable by design.** This profile uses GitHub-hosted visual assets and public source links rather than third-party image services that can become unavailable.
+> **Reliable by design.** This profile uses GitHub-hosted visual assets and public source links rather than third-party image services that can become unavailable. The contribution field is a self-hosted daily snapshot generated from GitHub’s public GraphQL data; use the live public routes above for real-time repository and activity details.
 
 ---
 
