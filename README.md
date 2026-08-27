@@ -6,7 +6,7 @@
 
 ## Software for work that **has to keep moving.**
 
-I’m Jonnywik, a full-stack developer building resilient, user-centred operational software—where clarity, safeguards, and real workflows shape the interface. My focus spans TypeScript, React, Next.js, Python/FastAPI, and relational data systems.
+I build resilient operational software with clear safeguards and usable workflows.
 
 | Current signal | Portfolio status |
 | --- | --- |
@@ -17,9 +17,9 @@ I’m Jonnywik, a full-stack developer building resilient, user-centred operatio
 ### SIGNAL NODES / EXPAND FOR PROJECT DETAIL
 
 <details>
-<summary><strong>NODE 01 / SYSTEM</strong> — Resilience Command Center</summary>
+<summary><strong>NODE 01 / SYSTEM</strong>: Resilience Command Center</summary>
 
-**System signal.** Development foundation for resilient disaster-management operations, combining FastAPI, PostGIS, a command-center interface, and offline-aware mobile workflows.
+**System signal.** A resilience foundation that combines FastAPI, PostGIS, a command-center interface, and offline-aware mobile workflows.
 
 **Public repository snapshot:** `TypeScript` · `0 stars` · `0 forks` · `0 open issues`
 
@@ -28,9 +28,9 @@ I’m Jonnywik, a full-stack developer building resilient, user-centred operatio
 </details>
 
 <details>
-<summary><strong>NODE 02 / EVIDENCE</strong> — Employee Management Dashboard</summary>
+<summary><strong>NODE 02 / EVIDENCE</strong>: Employee Management Dashboard</summary>
 
-**System signal.** Responsive operations workspace for onboarding, attendance, payroll approvals, claims, and employee-facing workflows.
+**System signal.** A responsive workspace for onboarding, attendance, payroll approvals, claims, and employee tasks.
 
 **Public repository snapshot:** `TypeScript` · `0 stars` · `0 forks` · `0 open issues` · `MIT`
 
@@ -39,9 +39,9 @@ I’m Jonnywik, a full-stack developer building resilient, user-centred operatio
 </details>
 
 <details>
-<summary><strong>NODE 03 / SOURCE</strong> — Portfolio Command Center</summary>
+<summary><strong>NODE 03 / SOURCE</strong>: Portfolio Command Center</summary>
 
-**System signal.** Interactive source-first portfolio that connects project filters, case-study panels, interface evidence, and documented engineering decisions.
+**System signal.** An interactive portfolio with filters, case studies, interface evidence, and engineering decisions.
 
 **Public repository snapshot:** `TypeScript` · `0 stars` · `0 forks` · `0 open issues`
 
@@ -51,19 +51,19 @@ I’m Jonnywik, a full-stack developer building resilient, user-centred operatio
 
 ### QUICK TRACE / SELECT A ROUTE
 
-**`01 / WORK MAP`** — [Compare featured systems](#01--work-map) for sanitized interface previews, system focus, and direct source links.
+**`01 / WORK MAP`**: [Compare featured systems](#01--work-map) through previews, system focus, and source links.
 
-**`02 / DECISION RECORDS`** — [Open evidence traces](#02--evidence--decision--trace) for architecture, operational boundaries, and implementation context.
+**`02 / DECISION RECORDS`**: [Open evidence traces](#02--evidence--decision--trace) for architecture, boundaries, and implementation context.
 
-**`03 / BUILD METHOD`** — [Read the active principles](#03--method--decision--state) behind the product and engineering decisions.
+**`03 / BUILD METHOD`**: [Read the active principles](#03--method--decision--state) behind the work.
 
-**`PORTFOLIO / INTERACTIVE`** — [Explore the Command Center](https://github.com/Jonnywik/Jonnywik.github.io) for filters, case-study panels, and a navigable source-first experience.
+**`PORTFOLIO / INTERACTIVE`**: [Explore the Command Center](https://github.com/Jonnywik/Jonnywik.github.io) for filters and case studies.
 
 ---
 
 ![Animated Work Map divider summarizing featured systems, evidence, and source destinations](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-work-map.gif)
 
-> **WORK MAP OVERVIEW.** Compare the two flagship operational systems through sanitized interface evidence, implementation focus, and direct source traces.
+> **WORK MAP OVERVIEW.** Compare two operational systems through sanitized previews and direct source traces.
 >
 > **[Open the interactive Command Center](https://github.com/Jonnywik/Jonnywik.github.io)** · **[Inspect Resilience](https://github.com/Jonnywik/EnvScie-CommandCenter)** · **[Inspect Employee Operations](https://github.com/Jonnywik/employee-management-dashboard)**
 
@@ -71,22 +71,24 @@ I’m Jonnywik, a full-stack developer building resilient, user-centred operatio
 
 ### Follow the work, *not the noise.*
 
-Each project is a traceable system: a problem, a design boundary, and the engineering choices used to carry it forward. The previews below are self-hosted, sanitized demonstrations; the details link directly to the source and architecture behind them.
+Each project links a problem, a boundary, and its implementation choices.
+
+Self-hosted previews link directly to sanitized interface evidence and source.
 
 | `01 / RESILIENCE / SYSTEM` | `02 / PEOPLE / SYSTEM` |
 | --- | --- |
 | [![Animated sanitized preview of the Resilience Command Center](https://raw.githubusercontent.com/Jonnywik/EnvScie-CommandCenter/main/docs/assets/command-center-preview.gif)](https://github.com/Jonnywik/EnvScie-CommandCenter) | [![Animated sanitized preview of the Employee Management Dashboard](https://raw.githubusercontent.com/Jonnywik/employee-management-dashboard/main/docs/assets/employee-dashboard-preview.gif)](https://github.com/Jonnywik/employee-management-dashboard) |
-| **[Code for Resilience — Command Center](https://github.com/Jonnywik/EnvScie-CommandCenter)**<br />Decision-support foundation for local emergency operations, offline-aware workflows, and documented safety boundaries. | **[Employee Management Dashboard](https://github.com/Jonnywik/employee-management-dashboard)**<br />Responsive internal operations workspace for onboarding, attendance, approvals, claims, and audit-oriented workflows. |
+| **[Code for Resilience: Command Center](https://github.com/Jonnywik/EnvScie-CommandCenter)**<br />Decision support for local emergency operations with offline-aware workflows and clear safety boundaries. | **[Employee Management Dashboard](https://github.com/Jonnywik/employee-management-dashboard)**<br />An internal workspace for onboarding, attendance, approvals, claims, and audit-ready workflows. |
 | `FastAPI` · `PostGIS` · `Next.js` · `React Native` · `Expo` | `TypeScript` · `React` · `tRPC` · `Drizzle` · `MySQL` · `Vitest` |
 | [Inspect the source trace](https://github.com/Jonnywik/EnvScie-CommandCenter) | [Inspect the source trace](https://github.com/Jonnywik/employee-management-dashboard) |
 
-> **Evidence boundary.** The animated interface previews use sanitized, non-production demonstration content. They document the experience without representing live employee, emergency, municipal, or incident data.
+> **Evidence boundary.** The previews use sanitized demonstration content and never show live employee, emergency, municipal, or incident data.
 
 ---
 
 ![Animated Decision Trace divider summarizing architecture, operational boundaries, and evidence records](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-decision-trace.gif)
 
-> **DECISION TRACE OVERVIEW.** Move beyond the interface into architecture, operational boundaries, and the implementation context behind each featured system.
+> **DECISION TRACE OVERVIEW.** Inspect architecture, operational boundaries, and implementation context for each system.
 >
 > **[Open the evidence records](#02--evidence--decision--trace)** · **[Read Command Center architecture](https://github.com/Jonnywik/EnvScie-CommandCenter/blob/main/docs/architecture.md)** · **[Explore the portfolio system map](https://github.com/Jonnywik/Jonnywik.github.io)**
 
@@ -94,9 +96,11 @@ Each project is a traceable system: a problem, a design boundary, and the engine
 
 ### The detail behind the interface.
 
-#### 01 — [Code for Resilience — Command Center](https://github.com/Jonnywik/EnvScie-CommandCenter)
+#### 01 / [Code for Resilience: Command Center](https://github.com/Jonnywik/EnvScie-CommandCenter)
 
-**System focus:** a development foundation for local emergency operations. The project brings together a FastAPI/PostGIS backend, a command-center dashboard, and an offline-aware resident mobile experience. It is designed as decision support and development/pilot infrastructure—not as a certified live emergency-service deployment.
+**System focus:** A pilot-oriented foundation for local emergency operations using FastAPI, PostGIS, a command-center dashboard, and an offline-aware resident experience.
+
+It supports decisions and development work, not certified emergency-service deployment.
 
 `FastAPI` · `PostGIS` · `Next.js` · `React Native` · `Expo` · `WebSockets`
 
@@ -107,15 +111,17 @@ Each project is a traceable system: a problem, a design boundary, and the engine
 
 | Evidence line | What to inspect |
 | --- | --- |
-| **Architecture** | The FastAPI/PostGIS backend, Next.js command center, and Expo resident flow in the [repository architecture](https://github.com/Jonnywik/EnvScie-CommandCenter/blob/main/docs/architecture.md). |
-| **Operational boundary** | Decision-support and pilot infrastructure only; the project documents what remains necessary before any live emergency-service deployment. |
-| **Interface evidence** | The repository’s sanitized animated preview documents the command-center interface without presenting live municipal or incident data. |
+| **Architecture** | Inspect the FastAPI/PostGIS backend, Next.js command center, and Expo resident flow in the [architecture guide](https://github.com/Jonnywik/EnvScie-CommandCenter/blob/main/docs/architecture.md). |
+| **Operational boundary** | This is decision support and pilot infrastructure, not a certified emergency-service deployment. |
+| **Interface evidence** | The sanitized preview contains no live municipal or incident data. |
 
 </details>
 
-#### 02 — [Employee Management Dashboard](https://github.com/Jonnywik/employee-management-dashboard)
+#### 02 / [Employee Management Dashboard](https://github.com/Jonnywik/employee-management-dashboard)
 
-**System focus:** a responsive HR operations workspace for onboarding, attendance, payroll, claims, and employee-facing workflows. The interface keeps workflow state, approval steps, and audit-oriented exports close to the work teams need to complete.
+**System focus:** A responsive HR workspace for onboarding, attendance, payroll, claims, and employee tasks.
+
+The interface keeps workflow state, approval steps, and audit-ready exports close to the work.
 
 `TypeScript` · `React` · `tRPC` · `Drizzle` · `MySQL` · `Vitest`
 
@@ -126,15 +132,15 @@ Each project is a traceable system: a problem, a design boundary, and the engine
 
 | Evidence line | What to inspect |
 | --- | --- |
-| **Workflow coverage** | The project’s onboarding, attendance, claims, and payroll-approval paths in the [system overview](https://github.com/Jonnywik/employee-management-dashboard#what-the-system-covers). |
-| **Implementation** | The React workspace, typed procedures, Drizzle persistence, and test tooling described in the repository’s architecture materials. |
+| **Workflow coverage** | Inspect onboarding, attendance, claims, and payroll approvals in the [system overview](https://github.com/Jonnywik/employee-management-dashboard#what-the-system-covers). |
+| **Implementation** | Review the React workspace, typed procedures, Drizzle persistence, and test tooling. |
 | **Interface evidence** | The animated demo uses illustrative aggregates and neutral labels only. |
 
 </details>
 
-#### 03 — [Portfolio Command Center](https://github.com/Jonnywik/Jonnywik.github.io)
+#### 03 / [Portfolio Command Center](https://github.com/Jonnywik/Jonnywik.github.io)
 
-**System focus:** an interactive source-first portfolio that turns the two flagship repositories into a navigable evidence map, using project filters, case-study panels, decision records, and route-node visual language.
+**System focus:** An interactive portfolio with project filters, case studies, decision records, and route-node visuals.
 
 `React` · `TypeScript` · `Vite` · `Tailwind CSS` · `Accessibility` · `Framer Motion`
 
@@ -145,9 +151,9 @@ Each project is a traceable system: a problem, a design boundary, and the engine
 
 | Evidence line | What to inspect |
 | --- | --- |
-| **Interaction model** | Project filtering, case-study selection, responsive navigation, theme control, and reduced-motion support. |
-| **Design reasoning** | The route-grid system, teal/orange operational signals, and source-first evidence hierarchy documented in the repository. |
-| **Purpose** | A real portfolio surface that connects claims to public code rather than treating GitHub as a static résumé. |
+| **Interaction model** | Inspect project filtering, case-study selection, responsive navigation, theme control, and reduced-motion support. |
+| **Design reasoning** | Review the route-grid system, signal states, and source-first evidence hierarchy. |
+| **Purpose** | The portfolio connects project claims to public code. |
 
 </details>
 
@@ -155,7 +161,7 @@ Each project is a traceable system: a problem, a design boundary, and the engine
 
 ![Animated Method and State divider summarizing clarity, resilience, and responsible-system boundaries](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-method-state.gif)
 
-> **METHOD / DECISION / STATE OVERVIEW.** The work is guided by operational clarity, resilient workflows, and responsible-system boundaries—not visual polish alone.
+> **METHOD / DECISION / STATE OVERVIEW.** The work prioritizes operational clarity, resilient workflows, and responsible boundaries.
 >
 > **[Read the active principles](#03--method--decision--state)** · **[See the interactive approach board](https://github.com/Jonnywik/Jonnywik.github.io)**
 
@@ -165,9 +171,9 @@ Each project is a traceable system: a problem, a design boundary, and the engine
 
 | Active principle | What it means in practice |
 | --- | --- |
-| **Operational clarity** | Make state, action, and consequence understandable at a glance so the next decision is easier to see. |
-| **Resilient workflows** | Treat connectivity, uncertainty, approval boundaries, and partial failures as product concerns—not afterthoughts. |
-| **Responsible systems** | State what software can—and cannot—do; useful systems make safeguards and limitations visible. |
+| **Operational clarity** | Make state, action, and consequence clear at a glance. |
+| **Resilient workflows** | Treat connectivity, uncertainty, approvals, and partial failures as product concerns. |
+| **Responsible systems** | State what software can do and make its safeguards visible. |
 
 **Technology map:** `TypeScript` · `React` · `Next.js` · `Python` · `FastAPI` · `Node.js` · `tRPC` · `PostgreSQL` · `PostGIS` · `MySQL` · `Drizzle ORM` · `Vitest` · `React Native` · `Expo`
 
@@ -175,7 +181,7 @@ Each project is a traceable system: a problem, a design boundary, and the engine
 
 ![Animated Portfolio Telemetry divider summarizing public repositories, activity, and technology signals](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-telemetry.gif)
 
-> **PORTFOLIO TELEMETRY OVERVIEW.** Review public repository, contribution, and technology signals as supporting evidence—not vanity metrics.
+> **PORTFOLIO TELEMETRY OVERVIEW.** Review public repository, contribution, and technology signals as evidence.
 >
 > **[Open repositories](https://github.com/Jonnywik?tab=repositories)** · **[View GitHub activity](https://github.com/Jonnywik)**
 
@@ -191,13 +197,15 @@ Each project is a traceable system: a problem, a design boundary, and the engine
 | **Contribution activity** | [View GitHub activity](https://github.com/Jonnywik) |
 | **Technology footprint** | TypeScript, React, Next.js, Python, FastAPI, relational data systems, and mobile workflows. |
 
-> **Reliable by design.** This profile uses GitHub-hosted visual assets and public source links rather than third-party image services that can become unavailable. The contribution field is a self-hosted daily snapshot generated from GitHub’s public GraphQL data; use the live public routes above for real-time repository and activity details.
+> **Reliable by design.** This profile uses GitHub-hosted assets and public source links.
+>
+> The contribution field refreshes daily from public GitHub GraphQL data, while the links above provide real-time details.
 
 ---
 
 ![Animated Source-First divider summarizing the route from project story to public implementation](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-source-first.gif)
 
-> **SOURCE-FIRST OVERVIEW.** Follow a project from its interface story to public source, decisions, and documented implementation boundaries.
+> **SOURCE-FIRST OVERVIEW.** Move from a project story to public source, decisions, and documented boundaries.
 >
 > **[Open the Portfolio Command Center](https://github.com/Jonnywik/Jonnywik.github.io)** · **[Visit GitHub](https://github.com/Jonnywik)**
 
@@ -205,7 +213,7 @@ Each project is a traceable system: a problem, a design boundary, and the engine
 
 ### Want to inspect the *systems underneath?*
 
-The **[Portfolio Command Center](https://github.com/Jonnywik/Jonnywik.github.io)** is the fastest way to move from a project overview into its decisions, interface evidence, and source. Every feature story leads back to a public repository and documented implementation boundary.
+The **[Portfolio Command Center](https://github.com/Jonnywik/Jonnywik.github.io)** connects each project overview to source, decisions, and boundaries.
 
 **[Open the work map](https://github.com/Jonnywik/Jonnywik.github.io)** · **[Visit GitHub](https://github.com/Jonnywik)** · **[Return to featured systems](#02--evidence--decision--trace)**
 
