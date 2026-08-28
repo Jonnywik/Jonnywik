@@ -199,13 +199,13 @@ The interface keeps workflow state, approval steps, and audit-ready exports clos
 <details>
 <summary><strong>OPEN RECENT SIGNALS</strong><br />Latest public pushes and PR review state</summary>
 
-**[Jonnywik/transit-planner · 5a7ff1c](https://github.com/Jonnywik/transit-planner/commit/5a7ff1c8250f0c34d80bc39d15860d67230893f8)**: pushed to `main` 57m ago.
+**[Jonnywik/transit-planner · cccb5fb](https://github.com/Jonnywik/transit-planner/commit/cccb5fbc190f1ba9b2b807fa1df4facd8364952a)**: pushed to `main` 1d ago.
 
-**[Jonnywik/Jonnywik · 21a8b65](https://github.com/Jonnywik/Jonnywik/commit/21a8b6574fb76cb6217787f5e5018aa3e096a89c)**: pushed to `main` 15h ago.
+**[Jonnywik/EnvScie-CommandCenter · 3430d8b](https://github.com/Jonnywik/EnvScie-CommandCenter/commit/3430d8bb8192b5350b078987bc5d4b980ef3af7b)**: pushed to `main` 1d ago.
 
-**[Jonnywik/Jonnywik.github.io · 32b9fc6](https://github.com/Jonnywik/Jonnywik.github.io/commit/32b9fc6ea38c48c44999857877d9c8b7d08d57bf)**: pushed to `main` 16h ago.
+**[Jonnywik/Jonnywik · 4f3a3c7](https://github.com/Jonnywik/Jonnywik/commit/4f3a3c77f0a8873d0b4bec35569723369a8227df)**: pushed to `main` 1d ago.
 
-**[Jonnywik/EnvScie-CommandCenter · 55fc0cc](https://github.com/Jonnywik/EnvScie-CommandCenter/commit/55fc0cc2e87fc06b2fb50bf00fd8a745fab13f40)**: pushed to `main` 16h ago.
+**[Jonnywik/Jonnywik.github.io · e5fe9df](https://github.com/Jonnywik/Jonnywik.github.io/commit/e5fe9dfbb276ce83319946cc84794be30e65f44e)**: pushed to `main` 2d ago.
 
 **PR review signal:** No public review contributions are recorded in the current activity window.
 
