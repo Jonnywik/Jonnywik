@@ -199,13 +199,13 @@ The interface keeps workflow state, approval steps, and audit-ready exports clos
 <details>
 <summary><strong>OPEN RECENT SIGNALS</strong><br />Latest public pushes and PR review state</summary>
 
-**[kc4el/kumon-ems- · c8690ed](https://github.com/kc4el/kumon-ems-/commit/c8690ed2a3e5799cda773985a083ed231b9583cd)**: pushed to `standard-format` 3h ago.
+**[kc4el/kumon-ems- · c5bd55f](https://github.com/kc4el/kumon-ems-/commit/c5bd55f645450088118e6ce33a155dda98db0ae1)**: pushed to `main` 1d ago.
 
-**[Jonnywik/ingritializer · f19af7b](https://github.com/Jonnywik/ingritializer/commit/f19af7bb57e43832a27d6c33847196c0b9c5e244)**: pushed to `main` 13d ago.
+**[Jonnywik/ingritializer · f19af7b](https://github.com/Jonnywik/ingritializer/commit/f19af7bb57e43832a27d6c33847196c0b9c5e244)**: pushed to `main` 14d ago.
 
-**[Jonnywik/transit-planner · 08c3272](https://github.com/Jonnywik/transit-planner/commit/08c32722ebb9aebd28a200803dffd627d261a615)**: pushed to `main` 13d ago.
+**[Jonnywik/transit-planner · 08c3272](https://github.com/Jonnywik/transit-planner/commit/08c32722ebb9aebd28a200803dffd627d261a615)**: pushed to `main` 14d ago.
 
-**[Jonnywik/EnvScie-CommandCenter · 3430d8b](https://github.com/Jonnywik/EnvScie-CommandCenter/commit/3430d8bb8192b5350b078987bc5d4b980ef3af7b)**: pushed to `main` 13d ago.
+**[Jonnywik/EnvScie-CommandCenter · 3430d8b](https://github.com/Jonnywik/EnvScie-CommandCenter/commit/3430d8bb8192b5350b078987bc5d4b980ef3af7b)**: pushed to `main` 14d ago.
 
 **PR review signal:** No public review contributions are recorded in the current activity window.
 
