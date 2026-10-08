@@ -18,7 +18,11 @@ SLATE = (145, 169, 178)
 
 
 def font(filename: str, size: int):
-    return ImageFont.truetype(f"/usr/share/fonts/truetype/dejavu/{filename}", size)
+    windows_font = "segoeuib.ttf" if "Bold" in filename else "segoeui.ttf"
+    for path in [f"/usr/share/fonts/truetype/dejavu/{filename}", f"C:/Windows/Fonts/{windows_font}"]:
+        if Path(path).exists():
+            return ImageFont.truetype(path, size)
+    return ImageFont.load_default(size=size)
 
 
 FONT_NAME = font("DejaVuSans-Bold.ttf", 30)
@@ -157,52 +161,23 @@ def paste_portrait(image: Image.Image):
     image.alpha_composite(frame_front)
 
 
-def hero_frame(frame: int, width: int = 1200, height: int = 420) -> Image.Image:
-    t = frame / 32 * pi * 2
+def hero_frame(frame: int = 0, width: int = 1200, height: int = 420) -> Image.Image:
     image = Image.new("RGBA", (width, height), (*INK, 255))
-    haze = Image.new("RGBA", image.size, (0, 0, 0, 0))
-    haze_draw = ImageDraw.Draw(haze)
-    haze_draw.ellipse((270, 84, 868, 474), fill=(*TEAL, 18))
-    haze_draw.ellipse((700, -42, 1188, 290), fill=(*VIOLET, 13))
-    haze_draw.ellipse((875, 118, 1220, 430), fill=(*AMBER, 8))
-    image.alpha_composite(haze.filter(ImageFilter.GaussianBlur(100)))
-    draw = ImageDraw.Draw(image, "RGBA")
-    draw_grid(draw, width, height)
-    draw.rectangle((1, 1, width - 2, height - 2), outline=(*WHITE, 28), width=1)
-
-    paste_portrait(image)
-    draw_profile_copy(image, frame)
-
-    routes = hero_routes(t)
-    for points, color, opacity, stroke in [(routes[0], TEAL, 116, 2), (routes[1], MINT, 96, 1), (routes[2], VIOLET, 106, 1)]:
-        route_layer = Image.new("RGBA", image.size, (0, 0, 0, 0))
-        ImageDraw.Draw(route_layer).line(points, fill=(*color, opacity), width=stroke, joint="curve")
-        image.alpha_composite(route_layer)
-    for route, progress, color, size in [
-        (routes[0], frame / 32 * 0.62 + 0.04, TEAL, 3),
-        (routes[0], frame / 32 * 0.40 + 0.51, AMBER, 2),
-        (routes[1], frame / 32 * 0.49 + 0.18, MINT, 3),
-        (routes[2], frame / 32 * 0.44 + 0.69, VIOLET, 2),
-    ]:
-        draw_packet(image, route, progress, color, size)
-
-    for x, y, color, radius, phase, label in [
-        (646, 331, TEAL, 10, 0.0, "ORIGIN"),
-        (987, 188, AMBER, 8, 0.7, "EVIDENCE"),
-        (1031, 218, MINT, 8, 1.3, "SYSTEM"),
-        (1033, 270, VIOLET, 8, 1.8, "SOURCE"),
-    ]:
-        drift = sin(t * 0.74 + phase) * 2
-        glow(image, x, int(y + drift), color, radius, phase, frame)
-        label_layer = Image.new("RGBA", image.size, (0, 0, 0, 0))
-        ImageDraw.Draw(label_layer).text((x + 13, int(y + drift) - 5), label, font=FONT_META, fill=(*color, 235))
-        image.alpha_composite(label_layer)
-
-    marker = ImageDraw.Draw(image, "RGBA")
-    for x, y, color in [(1112, 151, MINT), (1152, 129, AMBER), (1179, 108, VIOLET)]:
-        marker.ellipse((x - 2, y - 2, x + 2, y + 2), fill=(*color, 172))
-    return image.convert("RGB").quantize(colors=128, method=Image.Quantize.MEDIANCUT)
-
+    draw = ImageDraw.Draw(image)
+    for x in range(840, width, 60):
+        draw.line((x, 0, x, height), fill=GRID)
+    draw.rounded_rectangle((1, 1, width - 2, height - 2), radius=18, outline=GRID, width=2)
+    draw.rectangle((60, 58, 66, 111), fill=TEAL)
+    draw.text((86, 65), "MIKAEL C. LIM", font=font("DejaVuSans-Bold.ttf", 60), fill=WHITE)
+    draw.text((62, 150), "BSIT student · PLM", font=font("DejaVuSans.ttf", 34), fill=MINT)
+    draw.text((62, 214), "Building operational", font=font("DejaVuSans.ttf", 38), fill=WHITE)
+    draw.text((62, 263), "web apps.", font=font("DejaVuSans.ttf", 38), fill=WHITE)
+    draw.text((62, 351), "Python  /  React  /  TypeScript", font=font("DejaVuSans.ttf", 28), fill=SLATE)
+    draw.rounded_rectangle((872, 43, 1147, 379), radius=16, fill=(16, 29, 38), outline=TEAL, width=2)
+    portrait = Image.open(PORTRAIT).convert("RGBA")
+    portrait.thumbnail((252, 310), Image.Resampling.LANCZOS)
+    image.alpha_composite(portrait, (884 + (252 - portrait.width) // 2, 56 + (310 - portrait.height) // 2))
+    return image.convert("RGB")
 
 def strip_frame(frame: int, width: int = 1200, height: int = 138) -> Image.Image:
     t = frame / 24 * pi * 2
@@ -237,7 +212,9 @@ def main():
     if not PORTRAIT.exists():
         raise FileNotFoundError(f"Run scripts/prepare_profile_portrait.py first: {PORTRAIT}")
     ASSETS.mkdir(parents=True, exist_ok=True)
-    save_gif(ASSETS / "profile-signal-field.gif", [hero_frame(frame) for frame in range(32)], 84)
+    hero = hero_frame()
+    hero.save(ASSETS / "profile-signal-field-fallback.png", optimize=True)
+    hero.save(ASSETS / "profile-signal-field.gif")
     save_gif(ASSETS / "route-pulse-strip.gif", [strip_frame(frame) for frame in range(24)], 90)
     print(ASSETS / "profile-signal-field.gif")
     print(ASSETS / "route-pulse-strip.gif")

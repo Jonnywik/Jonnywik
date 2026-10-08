@@ -22,11 +22,12 @@ def font(name, size):
     candidates = [
         f"/usr/share/fonts/truetype/dejavu/{name}",
         f"/usr/share/fonts/truetype/liberation2/{name}",
+        "C:/Windows/Fonts/segoeuib.ttf" if "Bold" in name else "C:/Windows/Fonts/segoeui.ttf",
     ]
     for candidate in candidates:
         if Path(candidate).exists():
             return ImageFont.truetype(candidate, size)
-    return ImageFont.load_default()
+    return ImageFont.load_default(size=size)
 
 
 FONT_TITLE = font("DejaVuSans-Bold.ttf", 20)
@@ -164,96 +165,34 @@ def work_map_frame(frame):
     return quantize(image)
 
 
-def decision_trace_frame(frame):
-    image = base_frame(frame, AMBER, VIOLET)
-    draw_copy(image, "02 / DECISION TRACE", "EVIDENCE RECORDS", "ARCHITECTURE  /  BOUNDARIES  /  CONTEXT", AMBER)
-    route = chain(((340, 70), (470, 31), (560, 109), (702, 66)), ((702, 66), (776, 46), (812, 51), (862, 63)))
-    draw_route(image, route, TEAL, 146, 2)
-    scan = Image.new("RGBA", image.size, (0, 0, 0, 0))
-    draw = ImageDraw.Draw(scan)
-    for index, (x, y, color, alpha) in enumerate([(808, 28, VIOLET, 80), (830, 38, TEAL, 120), (852, 48, AMBER, 178)]):
-        draw.rounded_rectangle((x, y, x + 270, y + 46), radius=5, outline=(*color, alpha), width=1)
-        draw.rectangle((x + 17, y + 13, x + 178, y + 15), fill=(*MINT, alpha))
-        draw.rectangle((x + 17, y + 27, x + 92 + index * 26, y + 29), fill=(*color, alpha))
-    image.alpha_composite(scan)
-    draw_packet(image, route, frame / FRAMES * 0.76 + 0.08, TEAL, 3)
-    draw_packet(image, route, frame / FRAMES * 0.49 + 0.56, AMBER, 2)
-    glow_node(image, 862, 63, AMBER, frame, 0.4, 5, "VERIFY")
-    glow_node(image, 1098, 94, VIOLET, frame, 1.1, 4, "TRACE")
+def section_header(title, summary, accent):
+    image = Image.new("RGB", (WIDTH, HEIGHT), INK)
+    draw = ImageDraw.Draw(image)
+    draw.line((0, 1, WIDTH, 1), fill=GRID, width=2)
+    draw.rectangle((28, 29, 34, 98), fill=accent)
+    draw.text((56, 20), title, font=font("DejaVuSans-Bold.ttf", 42), fill=WHITE)
+    draw.text((56, 76), summary, font=font("DejaVuSans.ttf", 25), fill=SLATE)
     return quantize(image)
+
+
+def decision_trace_frame(frame):
+    return section_header("Featured projects", "Previews, source code, and architecture", AMBER)
 
 
 def method_state_frame(frame):
-    image = base_frame(frame, VIOLET, TEAL)
-    draw_copy(image, "03 / METHOD + STATE", "ACTIVE PRINCIPLES", "CLARITY  /  RESILIENCE  /  BOUNDARIES", VIOLET)
-    source = chain(((340, 65), (460, 64), (540, 64), (630, 64)))
-    clarity = chain(((630, 64), (735, 51), (780, 27), (922, 27)))
-    resilience = chain(((630, 64), (738, 64), (820, 64), (1010, 64)))
-    boundary = chain(((630, 64), (738, 78), (812, 101), (1095, 101)))
-    draw_route(image, source, MINT, 172, 2)
-    draw_route(image, clarity, TEAL, 145, 2)
-    draw_route(image, resilience, VIOLET, 145, 2)
-    draw_route(image, boundary, AMBER, 145, 2)
-    for route, progress, color, size in [
-        (source, frame / FRAMES * 0.73 + 0.06, MINT, 3),
-        (clarity, frame / FRAMES * 0.49 + 0.38, TEAL, 2),
-        (resilience, frame / FRAMES * 0.63 + 0.18, VIOLET, 3),
-        (boundary, frame / FRAMES * 0.45 + 0.67, AMBER, 2),
-    ]:
-        draw_packet(image, route, progress, color, size)
-    glow_node(image, 630, 64, MINT, frame, 0, 5)
-    glow_node(image, 922, 27, TEAL, frame, 0.5, 4, "CLARITY")
-    glow_node(image, 1010, 64, VIOLET, frame, 1.1, 4, "RESILIENCE")
-    glow_node(image, 1095, 101, AMBER, frame, 1.7, 4, "BOUNDARY")
-    return quantize(image)
+    return section_header("Skills & approach", "Clear interfaces. Resilient workflows. Responsible boundaries.", VIOLET)
 
 
 def telemetry_frame(frame):
-    image = base_frame(frame, TEAL, VIOLET)
-    draw_copy(image, "04 / TELEMETRY", "PUBLIC SIGNALS", "REPOSITORIES  /  ACTIVITY  /  STACK", TEAL)
-    rail = Image.new("RGBA", image.size, (0, 0, 0, 0))
-    draw = ImageDraw.Draw(rail)
-    y = 67
-    draw.line((340, y, 1120, y), fill=(*TEAL, 142), width=2)
-    for index, x in enumerate(range(380, 1121, 48)):
-        height = 10 if index % 4 == 0 else 5
-        color = VIOLET if index % 5 == 0 else MINT
-        draw.line((x, y - height, x, y + height), fill=(*color, 92), width=1)
-    for x, color in [(534, TEAL), (725, VIOLET), (918, AMBER), (1080, MINT)]:
-        draw.rectangle((x - 22, 92, x + 22, 95), fill=(*color, 72))
-    image.alpha_composite(rail)
-    route = [(340, y), (1120, y)]
-    draw_packet(image, route, frame / FRAMES * 0.82 + 0.02, AMBER, 3)
-    draw_packet(image, route, frame / FRAMES * 0.58 + 0.39, VIOLET, 2)
-    for phase, (x, color, label) in enumerate([(534, TEAL, "REPOS"), (725, VIOLET, "ACTIVITY"), (918, AMBER, "STACK"), (1080, MINT, "PUBLIC")]):
-        glow_node(image, x, y, color, frame, phase * 0.62, 4, label)
-    return quantize(image)
+    return section_header("GitHub activity", "Contribution stats and recent public pushes", TEAL)
 
 
 def source_first_frame(frame):
-    image = base_frame(frame, VIOLET, AMBER)
-    draw_copy(image, "05 / SOURCE-FIRST", "TRACE TO CODE", "PROJECT STORY  →  PUBLIC IMPLEMENTATION", VIOLET)
-    route_a = chain(((465, 83), (588, 102), (670, 34), (800, 65)))
-    route_b = chain(((800, 65), (884, 94), (954, 47), (1084, 58)))
-    draw_route(image, route_a, TEAL, 158, 2)
-    draw_route(image, route_b, VIOLET, 165, 2)
-    symbols = Image.new("RGBA", image.size, (0, 0, 0, 0))
-    draw = ImageDraw.Draw(symbols)
-    draw.line((395, 40, 370, 64, 395, 88), fill=(*MINT, 172), width=2)
-    draw.line((429, 40, 454, 64, 429, 88), fill=(*MINT, 172), width=2)
-    draw.line((465, 34, 442, 94), fill=(*TEAL, 158), width=2)
-    draw.polygon([(1110, 58), (1082, 42), (1082, 74)], outline=(*AMBER, 218), fill=(*AMBER, 72))
-    image.alpha_composite(symbols)
-    draw_packet(image, route_a, frame / FRAMES * 0.67 + 0.09, TEAL, 3)
-    draw_packet(image, route_b, frame / FRAMES * 0.56 + 0.48, VIOLET, 2)
-    glow_node(image, 465, 83, TEAL, frame, 0, 4, "CODE")
-    glow_node(image, 800, 65, VIOLET, frame, 0.8, 5, "TRACE")
-    glow_node(image, 1084, 58, AMBER, frame, 1.5, 5, "OPEN")
-    return quantize(image)
+    return section_header("Explore my portfolio", "Visit the live website or browse its source code", VIOLET)
 
 
 def save_gif(name, renderer):
-    frames = [renderer(frame) for frame in range(FRAMES)]
+    frames = [renderer(frame) for frame in range(FRAMES if renderer is work_map_frame else 1)]
     frames[0].save(ASSETS / name, save_all=True, append_images=frames[1:], duration=82, loop=0, disposal=2, optimize=True)
 
 

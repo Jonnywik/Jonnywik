@@ -13,7 +13,7 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "assets"
 README = ROOT / "README.md"
-WIDTH, HEIGHT = 1200, 250
+WIDTH, HEIGHT = 1200, 460
 INK = "#090d12"
 PANEL = "#101820"
 LINE = "#263440"
@@ -29,7 +29,11 @@ END = "<!-- RECENT_ACTIVITY:END -->"
 
 
 def load_font(filename: str, size: int):
-    return ImageFont.truetype(f"/usr/share/fonts/truetype/dejavu/{filename}", size)
+    windows_font = "segoeuib.ttf" if "Bold" in filename else "segoeui.ttf"
+    for path in [f"/usr/share/fonts/truetype/dejavu/{filename}", f"C:/Windows/Fonts/{windows_font}"]:
+        if Path(path).exists():
+            return ImageFont.truetype(path, size)
+    return ImageFont.load_default(size=size)
 
 
 def strip_ansi(value: str):
@@ -76,7 +80,7 @@ def parse_time(value: str):
 def recent_pushes(user: str):
     events = github_json(f"users/{user}/events/public?per_page=100")
     entries, seen_repositories = [], set()
-    for event in events:
+    for event in sorted(events, key=lambda event: event["created_at"], reverse=True):
         if event.get("type") != "PushEvent":
             continue
         repo = event["repo"]["name"]
@@ -87,7 +91,7 @@ def recent_pushes(user: str):
         entries.append(
             {
                 "repo": repo,
-                "branch": event.get("payload", {}).get("ref", "refs/heads/main").split("/")[-1],
+                "branch": event.get("payload", {}).get("ref", "refs/heads/main").removeprefix("refs/heads/"),
                 "sha": head[:7],
                 "url": f"https://github.com/{repo}/commit/{head}",
                 "time": parse_time(event["created_at"]),
@@ -121,7 +125,7 @@ def recent_reviews(user: str):
     }}
     '''
     nodes = graphql_json(query)["user"]["contributionsCollection"]["pullRequestReviewContributions"]["nodes"]
-    return [node for node in nodes if node.get("pullRequestReview")]
+    return sorted([node for node in nodes if node.get("pullRequestReview")], key=lambda node: node["occurredAt"], reverse=True)
 
 
 def relative_time(moment: datetime):
@@ -140,55 +144,46 @@ def short_repo(repo: str):
 def render(pushes, reviews):
     output = ASSETS / "recent-activity-feed.png"
     output.parent.mkdir(parents=True, exist_ok=True)
-    display = load_font("DejaVuSans-Bold.ttf", 17)
-    mono = load_font("DejaVuSansMono.ttf", 10)
-    mono_small = load_font("DejaVuSansMono.ttf", 9)
-    image = Image.new("RGB", (WIDTH, HEIGHT), INK)
+    heading = load_font("DejaVuSans-Bold.ttf", 40)
+    body = load_font("DejaVuSans.ttf", 28)
+    small = load_font("DejaVuSans.ttf", 24)
+    separator_y = 140 + 53 * max(1, len(pushes))
+    height = separator_y + 108
+    image = Image.new("RGB", (WIDTH, height), INK)
     draw = ImageDraw.Draw(image)
-    for x in range(0, WIDTH, 48):
-        draw.line((x, 0, x, HEIGHT), fill="#121d25", width=1)
-    for y in range(0, HEIGHT, 48):
-        draw.line((0, y, WIDTH, y), fill="#121d25", width=1)
-    draw.rounded_rectangle((20, 18, WIDTH - 20, HEIGHT - 18), radius=10, outline=LINE, width=1, fill=PANEL)
-    draw.rectangle((46, 40, 50, 208), fill=VIOLET)
-    draw.text((66, 40), "GITHUB / RECENT ACTIVITY", font=mono, fill=VIOLET)
-    draw.text((66, 63), "Commit signal feed", font=display, fill=TEXT)
-    draw.text((66, 89), "LATEST PUBLIC PUSHES ACROSS REPOSITORIES", font=mono_small, fill=MUTED)
-
-    row_y = 116
+    draw.rounded_rectangle((2, 2, WIDTH - 3, height - 3), radius=16, fill=PANEL, outline=LINE, width=2)
+    draw.text((32, 24), "Recent public activity", font=heading, fill=TEXT)
+    draw.text((32, 82), "Latest push per repository · GitHub's event feed may lag", font=small, fill=MUTED)
+    if not pushes:
+        draw.text((32, 140), "No public pushes found in the event feed.", font=body, fill=MUTED)
     for index, entry in enumerate(pushes):
-        accent = ACCENTS[index % len(ACCENTS)]
-        draw.rounded_rectangle((66, row_y, 820, row_y + 23), radius=4, fill="#0b1117", outline=LINE, width=1)
-        draw.rectangle((66, row_y, 70, row_y + 23), fill=accent)
-        draw.text((82, row_y + 7), f"PUSH / {short_repo(entry['repo'])} / {entry['branch'].upper()}", font=mono_small, fill=TEXT)
-        draw.text((534, row_y + 7), entry["sha"], font=mono_small, fill=accent)
-        draw.text((675, row_y + 7), relative_time(entry["time"]), font=mono_small, fill=MUTED)
-        row_y += 27
-
-    draw.rounded_rectangle((858, 40, 1124, 208), radius=8, fill="#0b1117", outline=LINE, width=1)
-    draw.text((883, 61), "PR REVIEW SIGNAL", font=mono, fill=AMBER)
+        y = 128 + index * 53
+        draw.rectangle((32, y + 5, 36, y + 37), fill=ACCENTS[index % len(ACCENTS)])
+        repo_label = entry["repo"]
+        while draw.textlength(repo_label, font=body) > 650:
+            repo_label = repo_label[:-2] + "…"
+        draw.text((52, y), repo_label, font=body, fill=TEXT)
+        draw.text((746, y + 3), entry["sha"], font=small, fill=TEAL)
+        draw.text((940, y + 3), entry["time"].strftime("%Y-%m-%d"), font=small, fill=MUTED)
+    draw.line((32, separator_y, 1168, separator_y), fill=LINE, width=2)
     if reviews:
         review = reviews[0]["pullRequestReview"]
-        draw.text((883, 90), review["state"].upper(), font=display, fill=MINT)
-        draw.text((883, 118), short_repo(review["pullRequest"]["repository"]["nameWithOwner"]), font=mono_small, fill=TEXT)
-        draw.text((883, 139), "PUBLIC REVIEW ACTIVITY", font=mono_small, fill=MUTED)
-        draw.text((883, 166), relative_time(parse_time(reviews[0]["occurredAt"])), font=mono, fill=AMBER)
+        copy = "Latest PR review: " + review["state"].replace("_", " ").lower()
     else:
-        draw.text((883, 89), "NO REVIEW SIGNAL", font=display, fill=TEXT)
-        draw.text((883, 118), "No public PR review", font=mono_small, fill=MUTED)
-        draw.text((883, 134), "contributions recorded", font=mono_small, fill=MUTED)
-        draw.text((883, 169), "STATUS / STANDBY", font=mono, fill=AMBER)
-    draw.text((66, 223), f"REFRESHED / {datetime.now(timezone.utc).date().isoformat()} UTC  ·  SOURCE / GITHUB PUBLIC EVENTS + GRAPHQL", font=mono_small, fill=MUTED)
-    draw.text((946, 223), "OPEN COMMIT ROUTES", font=mono_small, fill=TEAL)
+        copy = "PR reviews: none recorded in GitHub's contribution window."
+    draw.text((32, separator_y + 15), copy, font=small, fill=MUTED)
+    draw.text((32, separator_y + 65), f"Updated {datetime.now(timezone.utc).date().isoformat()} UTC · GitHub public events", font=small, fill=MUTED)
     image.save(output, "PNG", optimize=True)
     return output
 
 
 def markdown_block(pushes, reviews):
-    lines = [START, "<details>", "<summary><strong>OPEN RECENT SIGNALS</strong><br />Latest public pushes and PR review state</summary>", ""]
+    lines = [START, ""]
+    if not pushes:
+        lines.extend(["No public pushes found in GitHub's current event feed.", ""])
     for entry in pushes:
         lines.append(
-            f"**[{entry['repo']} · {entry['sha']}]({entry['url']})**: pushed to `{entry['branch']}` {relative_time(entry['time']).lower()}."
+            f"- [{entry['repo']} · `{entry['sha']}`]({entry['url']}) — pushed to `{entry['branch']}` on {entry['time'].strftime('%Y-%m-%d')} UTC."
         )
         lines.append("")
     if reviews:
@@ -196,12 +191,12 @@ def markdown_block(pushes, reviews):
             review = review_node["pullRequestReview"]
             pull_request = review["pullRequest"]
             lines.append(
-                f"**[PR review · {pull_request['repository']['nameWithOwner']}]({review['url']})**: `{review['state'].lower()}` {relative_time(parse_time(review_node['occurredAt'])).lower()}."
+                f"- [PR review · {pull_request['repository']['nameWithOwner']}]({review['url']}) — {review['state'].replace('_', ' ').lower()} on {parse_time(review_node['occurredAt']).strftime('%Y-%m-%d')} UTC."
             )
             lines.append("")
     else:
-        lines.extend(["**PR review signal:** No public review contributions are recorded in the current activity window.", ""])
-    lines.extend(["**[View live GitHub activity](https://github.com/Jonnywik)** · **[Open repositories](https://github.com/Jonnywik?tab=repositories)**", "", "</details>", END])
+        lines.extend(["No public PR reviews recorded in GitHub's contribution window.", ""])
+    lines.append(END)
     return "\n".join(lines)
 
 
