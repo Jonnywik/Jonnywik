@@ -1,4 +1,4 @@
-name: Refresh public telemetry
+name: Refresh contribution snapshot
 
 on:
   schedule:
@@ -23,21 +23,22 @@ jobs:
       - name: Install renderer dependencies
         run: python -m pip install --upgrade pillow requests
 
-      - name: Render current public telemetry
+      - name: Render current contribution snapshot
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          python scripts/generate_profile_activity_card.py --user Jonnywik
-          python scripts/generate_recent_activity_feed.py --user Jonnywik
+        run: python scripts/generate_profile_telemetry.py --user Jonnywik
 
-      - name: Commit refreshed telemetry when activity changed
+      - name: Check profile assets and boundaries
+        run: python scripts/check_profile.py
+
+      - name: Commit refreshed snapshot when totals changed
         run: |
-          if git diff --quiet -- assets/github-activity-card.png assets/recent-activity-feed.png README.md; then
-            echo "Telemetry asset is already current."
+          if git diff --quiet -- assets/github-activity-card.png README.md; then
+            echo "Contribution snapshot is already current."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/github-activity-card.png assets/recent-activity-feed.png README.md
-          git commit -m "chore: refresh public telemetry"
+          git add assets/github-activity-card.png README.md
+          git commit -m "chore: refresh contribution snapshot"
           git push

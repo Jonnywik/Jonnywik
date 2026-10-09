@@ -1,63 +1,75 @@
-# Mikael C. Lim
+# Mikael Lim
 
-![Mikael C. Lim — BSIT student at PLM, building operational web apps with Python, React, and TypeScript](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/profile-signal-field-fallback.png)
+![Mikael Lim — BSIT at PLM, software engineering with supporting interests in security and project coordination](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/profile-banner.png)
 
-I build operational software with clear safeguards and usable workflows.
+BSIT at PLM. Software engineering is my focus; cybersecurity and project coordination are supporting interests. Open to relevant opportunities.
 
-**[View live portfolio](https://jonnywik.github.io/)** · [Portfolio source](https://github.com/Jonnywik/Jonnywik.github.io)
+**[Portfolio](https://jonnywik.github.io/)** · [Portfolio source](https://github.com/Jonnywik/Jonnywik.github.io) · [Repositories](https://github.com/Jonnywik?tab=repositories)
 
-![Featured projects — previews, code, and architecture](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-decision-trace.gif)
+![Featured projects](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-decision-trace.gif)
 
 ## Featured projects
 
-| Resilience Command Center | Employee Management Dashboard |
-| --- | --- |
-| [![Sanitized preview of the Resilience Command Center](https://raw.githubusercontent.com/Jonnywik/EnvScie-CommandCenter/main/docs/assets/command-center-preview.gif?v=5ec13eb)](https://github.com/Jonnywik/EnvScie-CommandCenter) | [![Sanitized preview of the Employee Management Dashboard](https://raw.githubusercontent.com/Jonnywik/employee-management-dashboard/main/docs/assets/employee-dashboard-preview.gif)](https://github.com/Jonnywik/employee-management-dashboard) |
-| Decision support for local emergency operations, with offline-aware workflows. A development foundation, **not a certified emergency-service deployment**. | A responsive HR workspace for onboarding, attendance, payroll approvals, claims, and employee tasks. |
-| `FastAPI` · `PostGIS` · `Next.js` · `React Native` · `Expo` | `TypeScript` · `React` · `tRPC` · `Drizzle` · `MySQL` · `Vitest` |
-| [View code](https://github.com/Jonnywik/EnvScie-CommandCenter) · [Architecture](https://github.com/Jonnywik/EnvScie-CommandCenter/blob/main/docs/architecture.md) | [View code](https://github.com/Jonnywik/employee-management-dashboard) · [System overview](https://github.com/Jonnywik/employee-management-dashboard#what-the-system-covers) |
+### Resilience Command Center
 
-*Previews use demonstration content, not live employee or incident data. Implementation details stay in each project's README.*
+[![Sanitized demo of the Resilience Command Center](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/command-center-demo.png)](https://github.com/Jonnywik/EnvScie-CommandCenter)
 
-![Skills and approach — clear interfaces, resilient workflows, responsible boundaries](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-method-state.gif)
+Decision support for local emergency operations with offline-aware workflows. A development foundation — **not a certified emergency-service deployment**. The preview uses illustrative records and public Esri imagery, not live incident data.
 
-## Skills & approach
+`FastAPI` · `Next.js` · `PostGIS` · `Expo` — [Code](https://github.com/Jonnywik/EnvScie-CommandCenter) · [Architecture](https://github.com/Jonnywik/EnvScie-CommandCenter/blob/main/docs/architecture.md)
 
-**Web:** TypeScript, React, Next.js · **Backend:** Python, FastAPI, Node.js · **Data:** PostgreSQL, PostGIS, MySQL · **Mobile:** React Native, Expo
+### Employee Dashboard
+
+[![Sanitized demo of the Employee Management Dashboard](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/employee-dashboard-demo.png)](https://github.com/Jonnywik/employee-management-dashboard)
+
+A responsive HR workspace for onboarding, attendance, payroll approvals, claims, and employee tasks. The preview is sanitized demo content, not live employee information.
+
+`TypeScript` · `React` · `tRPC` · `Drizzle` · `MySQL` — [Code](https://github.com/Jonnywik/employee-management-dashboard) · [System overview](https://github.com/Jonnywik/employee-management-dashboard#what-the-system-covers)
+
+### Ingritializer
+
+[![Original conceptual pantry illustration, not an app screenshot](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/ingritializer-illustration.svg)](https://github.com/Jonnywik/ingritializer)
+
+Inventory, recipes, and cooking records in one workflow. The image is an original concept illustration, not a product screenshot.
+
+`TypeScript` · `React` — [Code](https://github.com/Jonnywik/ingritializer)
+
+### Sakay · supporting prototype
+
+Metro Manila transit-planning prototype. Fares and routes are demo fixtures, not authoritative travel information. `JavaScript` · `Node.js` — [Code](https://github.com/Jonnywik/transit-planner)
+
+<sub>Previews use demonstration content, not live operational or employee data. Source links do not imply sole authorship; contributors remain credited in each repository.</sub>
+
+![Skills and interests](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-method-state.gif)
+
+## Skills & interests
+
+**Project technologies:** TypeScript, React, Next.js, Python, FastAPI, Node.js, PostgreSQL, PostGIS, MySQL, React Native, Expo.
+
+**Supporting interests:** security and project coordination.
 
 - **Clear interfaces:** make state, action, and consequence easy to understand.
 - **Resilient workflows:** account for connectivity problems, approvals, and partial failures.
 - **Responsible boundaries:** state what the software can and cannot do.
 
-![GitHub activity — contribution totals and recent public pushes](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-telemetry.gif)
+![GitHub activity](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-telemetry.gif)
 
 ## GitHub activity
 
-<details>
-<summary>View contribution stats and recent public activity</summary>
+[![GitHub contribution snapshot with GraphQL window](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/github-activity-card.png)](https://github.com/Jonnywik?tab=overview)
 
-[![GitHub contribution stats, calendar, and refresh date](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/github-activity-card.png)](https://github.com/Jonnywik?tab=overview)
+<!-- CONTRIBUTION_SNAPSHOT:START -->
 
-[![Recent public pushes and pull-request reviews, with dates](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/recent-activity-feed.png)](https://github.com/Jonnywik?tab=overview)
+| Calendar contributions | Commit contributions | Public owned repositories |
+| --- | --- | --- |
+| 217 | 204 | 11 |
 
-<!-- RECENT_ACTIVITY:START -->
+Real GitHub GraphQL snapshot · window Oct 4, 2025 – Oct 9, 2026 · refreshed automatically.
 
-- [Jonnywik/Jonnywik · `7ed3991`](https://github.com/Jonnywik/Jonnywik/commit/7ed3991eb693b753c5a2b611b9bf55cca4414ee0) — pushed to `main` on 2026-10-08 UTC.
+<!-- CONTRIBUTION_SNAPSHOT:END -->
 
-- [kc4el/kumon-ems- · `0a27f7f`](https://github.com/kc4el/kumon-ems-/commit/0a27f7f962846f2ad3f91759cd3dae448430373a) — pushed to `main` on 2026-09-17 UTC.
+![Explore](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-source-first.gif)
 
-No public PR reviews recorded in GitHub's contribution window.
+## Explore
 
-<!-- RECENT_ACTIVITY:END -->
-
-*Snapshots refresh daily from GitHub. The event feed can lag behind repository changes.*
-
-</details>
-
-![Explore my portfolio — live website and source code](https://raw.githubusercontent.com/Jonnywik/Jonnywik/main/assets/divider-source-first.gif)
-
-## Explore my portfolio
-
-Project filters, case studies, and engineering decisions in one place.
-
-**[Open live portfolio](https://jonnywik.github.io/)** · [View portfolio source](https://github.com/Jonnywik/Jonnywik.github.io) · [Browse repositories](https://github.com/Jonnywik?tab=repositories)
+**[Open the live portfolio](https://jonnywik.github.io/)** · [Portfolio source](https://github.com/Jonnywik/Jonnywik.github.io) · [Browse repositories](https://github.com/Jonnywik?tab=repositories)
