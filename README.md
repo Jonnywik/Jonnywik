@@ -64,7 +64,7 @@ Metro Manila transit-planning prototype. Fares and routes are demo fixtures, not
 | --- | --- | --- |
 | 218 | 205 | 11 |
 
-Real GitHub GraphQL snapshot · window Oct 5, 2025 – Oct 9, 2026 · refreshed automatically.
+Real GitHub GraphQL snapshot · window Oct 5, 2025 – Oct 10, 2026 · refreshed automatically.
 
 <!-- CONTRIBUTION_SNAPSHOT:END -->
 
